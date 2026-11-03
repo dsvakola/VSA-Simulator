@@ -1,0 +1,23 @@
+VSA Simulator
+Copyright (C) 2026 Vidyasagar Academy
+
+Developed by Prof. Dattaraj S. Vidyasagar & Prof. Yash D. Vidyasagar,
+for Vidyasagar Academy.
+
+Website: https://vsa.edu.in/software/
+E-mail:  softinquiry@vsa.edu.in
+
+This program is free software: you can redistribute it and/or modify it
+under the terms of the GNU General Public License as published by the Free
+Software Foundation, version 3 of the License.
+
+This program is distributed in the hope that it will be useful, but WITHOUT
+ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+FITNESS FOR A PARTICULAR PURPOSE. See the LICENSE file for details.
+
+Third-party components keep their own licences:
+- Tauri (MIT or Apache-2.0)
+- MicroPython, in the simulated Raspberry Pi Pico W (MIT)
+- Raspberry Pi Pico SDK, in the same firmware (BSD 3-Clause)
+See THIRD-PARTY-NOTICES.txt for their licence texts.
+- Microsoft Edge WebView2 runtime (Microsoft licence, installed separately)
