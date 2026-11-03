@@ -1,0 +1,79 @@
+{
+ "format": 2,
+ "breadboard": "none",
+ "parts": [
+  {
+   "id": "pico1",
+   "kind": "pico-w",
+   "x": 0,
+   "y": 0,
+   "rotation": 0,
+   "flipH": false,
+   "flipV": false,
+   "props": {
+    "program": "\"\"\"\n  Servo Sweep\n  Turns a servo motor arm from 0 to 180 degrees and back again.\n\n  A hobby servo reads a pulse 50 times a second. A short pulse\n  (0.54 ms) turns the arm to 0 degrees, a long pulse (2.4 ms) to 180\n  degrees. The program works out the pulse for each angle.\n\n  The servo needs 5 V, so it takes its power from the VBUS pin.\n\n  The circuit:\n  - Servo signal (orange) -> GP16\n  - Servo V+ (red) -> VBUS\n  - Servo GND (brown) -> GND\n\n  You can modify this code and save it with another file name to simulate in\n  VSA Simulator.\n\n  Modified 03 November 2026 by Prof. Dattaraj S. Vidyasagar\n  Modified 04 November 2026 by Prof. Yash D. Vidyasagar\n\n  This example code is in the public domain.\n  For a great collection of example codes to simulate on VSA Simulator,\n  visit: https://github.com/dsvakola/VSA-Simulator\n  Or visit our official website: https://vsa.edu.in/\n  To check our collection of useful software, visit: https://github.com/dsvakola/software\n\"\"\"\n\nfrom machine import Pin, PWM\nimport time\n\nservo = PWM(Pin(16))\nservo.freq(50)   # 50 pulses every second, one every 20 ms\n\ndef set_angle(angle):\n    \"\"\"Turns the arm to `angle` degrees (0 to 180).\"\"\"\n    pulse_us = 544 + (2400 - 544) * angle // 180   # 544 to 2400 microseconds\n    servo.duty_u16(pulse_us * 65535 // 20000)      # share of the 20 ms cycle\n\nwhile True:\n    for angle in range(0, 181):        # 0 to 180 degrees, one at a time\n        set_angle(angle)\n        time.sleep_ms(15)              # give the arm time to get there\n    for angle in range(180, -1, -1):   # and back again\n        set_angle(angle)\n        time.sleep_ms(15)\n",
+    "programName": "09-Servo-Sweep.py"
+   }
+  },
+  {
+   "id": "servo1",
+   "kind": "servo",
+   "x": 320,
+   "y": 60,
+   "rotation": 0,
+   "flipH": false,
+   "flipV": false,
+   "props": {}
+  }
+ ],
+ "wires": [
+  {
+   "id": "w1",
+   "from": {
+    "type": "pin",
+    "part": "servo1",
+    "pin": "GND"
+   },
+   "to": {
+    "type": "pin",
+    "part": "pico1",
+    "pin": "GND.8"
+   },
+   "color": "#8b4513",
+   "points": [],
+   "curved": false
+  },
+  {
+   "id": "w2",
+   "from": {
+    "type": "pin",
+    "part": "servo1",
+    "pin": "V+"
+   },
+   "to": {
+    "type": "pin",
+    "part": "pico1",
+    "pin": "VBUS"
+   },
+   "color": "#d62f2f",
+   "points": [],
+   "curved": false
+  },
+  {
+   "id": "w3",
+   "from": {
+    "type": "pin",
+    "part": "servo1",
+    "pin": "SIG"
+   },
+   "to": {
+    "type": "pin",
+    "part": "pico1",
+    "pin": "GP16"
+   },
+   "color": "#f07c16",
+   "points": [],
+   "curved": false
+  }
+ ]
+}

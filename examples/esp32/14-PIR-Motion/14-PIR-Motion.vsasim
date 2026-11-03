@@ -1,0 +1,158 @@
+{
+ "format": 2,
+ "breadboard": "half",
+ "parts": [
+  {
+   "id": "esp1",
+   "kind": "esp32-devkit",
+   "x": -300,
+   "y": 60,
+   "rotation": 0,
+   "flipH": false,
+   "flipV": false,
+   "props": {
+    "program": "\"\"\"\n  PIR Motion Alarm\n  Lights an LED and prints a message when the PIR sensor sees motion.\n\n  A PIR sensor's OUT pin goes high when it sees a warm body move.\n  In VSA Simulator, click the sensor and tick \"Motion\".\n\n  The circuit:\n  - PIR VCC -> VIN, GND -> GND\n  - PIR OUT -> D14 (GPIO14)\n  - LED: D13 (GPIO13) -> 220 ohm resistor -> LED anode, LED cathode -> GND\n\n  You can modify this code and save it with another file name to simulate in\n  VSA Simulator.\n\n  Modified 03 November 2026 by Prof. Dattaraj S. Vidyasagar\n  Modified 04 November 2026 by Prof. Yash D. Vidyasagar\n\n  This example code is in the public domain.\n  For a great collection of example codes to simulate on VSA Simulator,\n  visit: https://github.com/dsvakola/VSA-Simulator\n  Or visit our official website: https://vsa.edu.in/\n  To check our collection of useful software, visit: https://github.com/dsvakola/software\n\"\"\"\n\nfrom machine import Pin\n\npir = Pin(14, Pin.IN)\nled = Pin(13, Pin.OUT)\nlast_state = 0   # so we print only when something changes\n\nwhile True:\n    motion = pir.value()\n    led.value(motion)   # the LED follows the sensor\n    if motion != last_state:\n        if motion == 1:\n            print(\"Motion detected!\")\n        else:\n            print(\"All quiet.\")\n        last_state = motion\n",
+    "programName": "14-PIR-Motion.py"
+   }
+  },
+  {
+   "id": "s1",
+   "kind": "pir",
+   "x": 74.0,
+   "y": 64.0,
+   "rotation": 0,
+   "flipH": false,
+   "flipV": false,
+   "props": {}
+  },
+  {
+   "id": "r1",
+   "kind": "resistor",
+   "x": 174.0,
+   "y": 139.0,
+   "rotation": 0,
+   "flipH": false,
+   "flipV": false,
+   "props": {
+    "ohms": "220"
+   }
+  },
+  {
+   "id": "led1",
+   "kind": "led",
+   "x": 209.0,
+   "y": 84.0,
+   "rotation": 0,
+   "flipH": false,
+   "flipV": false,
+   "props": {
+    "color": "red"
+   }
+  }
+ ],
+ "wires": [
+  {
+   "id": "w1",
+   "from": {
+    "type": "pin",
+    "part": "esp1",
+    "pin": "3V3"
+   },
+   "to": {
+    "type": "hole",
+    "hole": "bp1"
+   },
+   "color": "#d62f2f",
+   "points": [],
+   "curved": false
+  },
+  {
+   "id": "w2",
+   "from": {
+    "type": "pin",
+    "part": "esp1",
+    "pin": "GND.2"
+   },
+   "to": {
+    "type": "hole",
+    "hole": "bn1"
+   },
+   "color": "#262626",
+   "points": [],
+   "curved": false
+  },
+  {
+   "id": "w3",
+   "from": {
+    "type": "hole",
+    "hole": "j8"
+   },
+   "to": {
+    "type": "pin",
+    "part": "esp1",
+    "pin": "VIN"
+   },
+   "color": "#d62f2f",
+   "points": [],
+   "curved": false
+  },
+  {
+   "id": "w4",
+   "from": {
+    "type": "hole",
+    "hole": "j10"
+   },
+   "to": {
+    "type": "hole",
+    "hole": "bn8"
+   },
+   "color": "#262626",
+   "points": [],
+   "curved": false
+  },
+  {
+   "id": "w5",
+   "from": {
+    "type": "pin",
+    "part": "esp1",
+    "pin": "D14"
+   },
+   "to": {
+    "type": "hole",
+    "hole": "j9"
+   },
+   "color": "#f5c400",
+   "points": [],
+   "curved": false
+  },
+  {
+   "id": "w6",
+   "from": {
+    "type": "hole",
+    "hole": "j21"
+   },
+   "to": {
+    "type": "hole",
+    "hole": "bn17"
+   },
+   "color": "#262626",
+   "points": [],
+   "curved": false
+  },
+  {
+   "id": "w7",
+   "from": {
+    "type": "pin",
+    "part": "esp1",
+    "pin": "D13"
+   },
+   "to": {
+    "type": "hole",
+    "hole": "j16"
+   },
+   "color": "#f07c16",
+   "points": [],
+   "curved": false
+  }
+ ]
+}

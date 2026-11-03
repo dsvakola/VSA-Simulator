@@ -1,0 +1,157 @@
+{
+ "format": 2,
+ "breadboard": "half",
+ "parts": [
+  {
+   "id": "esp1",
+   "kind": "esp32-devkit",
+   "x": -300,
+   "y": 60,
+   "rotation": 0,
+   "flipH": false,
+   "flipV": false,
+   "props": {
+    "program": "\"\"\"\n  IR Obstacle Sensor\n  Lights an LED when the infrared sensor sees an obstacle.\n\n  The IR obstacle sensor's OUT pin goes LOW (0) when something is close\n  in front of it.\n  In VSA Simulator, click the sensor and move the distance slider.\n\n  The circuit:\n  - IR sensor VCC -> 3V3, GND -> GND\n  - IR sensor OUT -> D14 (GPIO14)\n  - LED: D13 (GPIO13) -> 220 ohm resistor -> LED anode, LED cathode -> GND\n\n  You can modify this code and save it with another file name to simulate in\n  VSA Simulator.\n\n  Modified 03 November 2026 by Prof. Dattaraj S. Vidyasagar\n  Modified 04 November 2026 by Prof. Yash D. Vidyasagar\n\n  This example code is in the public domain.\n  For a great collection of example codes to simulate on VSA Simulator,\n  visit: https://github.com/dsvakola/VSA-Simulator\n  Or visit our official website: https://vsa.edu.in/\n  To check our collection of useful software, visit: https://github.com/dsvakola/software\n\"\"\"\n\nfrom machine import Pin\n\nsensor = Pin(14, Pin.IN)\nled = Pin(13, Pin.OUT)\nlast_state = 1\n\nwhile True:\n    clear = sensor.value()   # 0 = object found\n    if clear == 0:\n        led.value(1)\n    else:\n        led.value(0)\n    if clear != last_state:\n        print(\"Obstacle ahead!\" if clear == 0 else \"The way is clear.\")\n        last_state = clear\n",
+    "programName": "15-IR-Obstacle.py"
+   }
+  },
+  {
+   "id": "s1",
+   "kind": "ir-sensor",
+   "x": 74.0,
+   "y": 94.0,
+   "rotation": 0,
+   "flipH": false,
+   "flipV": false,
+   "props": {}
+  },
+  {
+   "id": "r1",
+   "kind": "resistor",
+   "x": 174.0,
+   "y": 139.0,
+   "rotation": 0,
+   "flipH": false,
+   "flipV": false,
+   "props": {
+    "ohms": "220"
+   }
+  },
+  {
+   "id": "led1",
+   "kind": "led",
+   "x": 209.0,
+   "y": 84.0,
+   "rotation": 0,
+   "flipH": false,
+   "flipV": false,
+   "props": {
+    "color": "red"
+   }
+  }
+ ],
+ "wires": [
+  {
+   "id": "w1",
+   "from": {
+    "type": "pin",
+    "part": "esp1",
+    "pin": "3V3"
+   },
+   "to": {
+    "type": "hole",
+    "hole": "bp1"
+   },
+   "color": "#d62f2f",
+   "points": [],
+   "curved": false
+  },
+  {
+   "id": "w2",
+   "from": {
+    "type": "pin",
+    "part": "esp1",
+    "pin": "GND.2"
+   },
+   "to": {
+    "type": "hole",
+    "hole": "bn1"
+   },
+   "color": "#262626",
+   "points": [],
+   "curved": false
+  },
+  {
+   "id": "w3",
+   "from": {
+    "type": "hole",
+    "hole": "j8"
+   },
+   "to": {
+    "type": "hole",
+    "hole": "bp6"
+   },
+   "color": "#d62f2f",
+   "points": [],
+   "curved": false
+  },
+  {
+   "id": "w4",
+   "from": {
+    "type": "hole",
+    "hole": "j9"
+   },
+   "to": {
+    "type": "hole",
+    "hole": "bn7"
+   },
+   "color": "#262626",
+   "points": [],
+   "curved": false
+  },
+  {
+   "id": "w5",
+   "from": {
+    "type": "pin",
+    "part": "esp1",
+    "pin": "D14"
+   },
+   "to": {
+    "type": "hole",
+    "hole": "j10"
+   },
+   "color": "#f5c400",
+   "points": [],
+   "curved": false
+  },
+  {
+   "id": "w6",
+   "from": {
+    "type": "hole",
+    "hole": "j21"
+   },
+   "to": {
+    "type": "hole",
+    "hole": "bn17"
+   },
+   "color": "#262626",
+   "points": [],
+   "curved": false
+  },
+  {
+   "id": "w7",
+   "from": {
+    "type": "pin",
+    "part": "esp1",
+    "pin": "D13"
+   },
+   "to": {
+    "type": "hole",
+    "hole": "j16"
+   },
+   "color": "#f07c16",
+   "points": [],
+   "curved": false
+  }
+ ]
+}

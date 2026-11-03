@@ -1,0 +1,97 @@
+{
+ "format": 2,
+ "breadboard": "none",
+ "parts": [
+  {
+   "id": "pico1",
+   "kind": "pico-w",
+   "x": 0,
+   "y": 0,
+   "rotation": 0,
+   "flipH": false,
+   "flipV": false,
+   "props": {
+    "program": "\"\"\"\n  OLED Bouncing Ball\n  Shows a title and a bouncing ball on a 128x64 SSD1306 OLED.\n\n  The OLED (address 0x3C) is driven with MicroPython's ssd1306 driver.\n  Everything is drawn in memory first and appears when show() is called.\n\n  You do not need to copy any library files; VSA Simulator adds them\n  itself. On a real board, copy ssd1306.py onto the board with\n  Thonny first.\n\n  The circuit:\n  - OLED GND -> GND, VCC -> 3V3(OUT)\n  - SDA -> GP4\n  - SCL -> GP5\n\n  You can modify this code and save it with another file name to simulate in\n  VSA Simulator.\n\n  Modified 03 November 2026 by Prof. Dattaraj S. Vidyasagar\n  Modified 04 November 2026 by Prof. Yash D. Vidyasagar\n\n  This example code is in the public domain.\n  For a great collection of example codes to simulate on VSA Simulator,\n  visit: https://github.com/dsvakola/VSA-Simulator\n  Or visit our official website: https://vsa.edu.in/\n  To check our collection of useful software, visit: https://github.com/dsvakola/software\n\"\"\"\n\nfrom machine import Pin, I2C\nimport ssd1306\nimport time\n\ni2c = I2C(0, sda=Pin(4), scl=Pin(5))\noled = ssd1306.SSD1306_I2C(128, 64, i2c, addr=0x3C)\n\nball_x = 10   # where the ball is\nstep_x = 3    # how far it moves each time\n\nwhile True:\n    oled.fill(0)                          # clear the picture\n    oled.text(\"VSA Simulator\", 12, 8)     # 8x8 pixel letters\n    oled.rect(0, 28, 128, 36, 1)          # a frame\n    oled.ellipse(ball_x, 46, 6, 6, 1, True)   # the ball, filled\n    oled.show()                           # nothing shows until this is called\n    ball_x += step_x\n    if ball_x < 8 or ball_x > 119:\n        step_x = -step_x\n    time.sleep_ms(20)\n",
+    "programName": "19-OLED-Display.py"
+   }
+  },
+  {
+   "id": "oled1",
+   "kind": "oled-ssd1306",
+   "x": 330,
+   "y": 60,
+   "rotation": 0,
+   "flipH": false,
+   "flipV": false,
+   "props": {
+    "address": "0x3C"
+   }
+  }
+ ],
+ "wires": [
+  {
+   "id": "w1",
+   "from": {
+    "type": "pin",
+    "part": "oled1",
+    "pin": "GND"
+   },
+   "to": {
+    "type": "pin",
+    "part": "pico1",
+    "pin": "GND.8"
+   },
+   "color": "#262626",
+   "points": [],
+   "curved": false
+  },
+  {
+   "id": "w2",
+   "from": {
+    "type": "pin",
+    "part": "oled1",
+    "pin": "VCC"
+   },
+   "to": {
+    "type": "pin",
+    "part": "pico1",
+    "pin": "3V3"
+   },
+   "color": "#d62f2f",
+   "points": [],
+   "curved": false
+  },
+  {
+   "id": "w3",
+   "from": {
+    "type": "pin",
+    "part": "oled1",
+    "pin": "SDA"
+   },
+   "to": {
+    "type": "pin",
+    "part": "pico1",
+    "pin": "GP4"
+   },
+   "color": "#1e6fd9",
+   "points": [],
+   "curved": false
+  },
+  {
+   "id": "w4",
+   "from": {
+    "type": "pin",
+    "part": "oled1",
+    "pin": "SCL"
+   },
+   "to": {
+    "type": "pin",
+    "part": "pico1",
+    "pin": "GP5"
+   },
+   "color": "#f5c400",
+   "points": [],
+   "curved": false
+  }
+ ]
+}

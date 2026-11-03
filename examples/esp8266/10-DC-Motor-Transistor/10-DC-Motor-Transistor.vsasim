@@ -1,0 +1,220 @@
+{
+ "format": 2,
+ "breadboard": "half",
+ "parts": [
+  {
+   "id": "esp1",
+   "kind": "esp8266-nodemcu",
+   "x": -300,
+   "y": 60,
+   "rotation": 0,
+   "flipH": false,
+   "flipV": false,
+   "props": {
+    "program": "\"\"\"\n  DC Motor with a Transistor\n  Speeds a DC motor up and slows it down again with PWM.\n\n  A GPIO pin cannot give enough current for a motor, so an NPN transistor\n  switches the motor's own 9 V battery. The diode across the motor\n  protects the transistor from the voltage spike when the motor stops.\n\n  The circuit:\n  - D6 (GPIO12) -> 1 k resistor -> transistor base\n  - Transistor emitter -> GND\n  - Transistor collector -> motor -> 9 V battery +\n  - Diode across the motor (stripe towards battery +)\n  - 9 V battery - -> GND\n\n  You can modify this code and save it with another file name to simulate in\n  VSA Simulator.\n\n  Modified 03 November 2026 by Prof. Dattaraj S. Vidyasagar\n  Modified 04 November 2026 by Prof. Yash D. Vidyasagar\n\n  This example code is in the public domain.\n  For a great collection of example codes to simulate on VSA Simulator,\n  visit: https://github.com/dsvakola/VSA-Simulator\n  Or visit our official website: https://vsa.edu.in/\n  To check our collection of useful software, visit: https://github.com/dsvakola/software\n\"\"\"\n\nfrom machine import Pin, PWM\nimport time\n\nmotor = PWM(Pin(12))\nmotor.freq(1000)\n\nwhile True:\n    for speed in range(0, 65536, 1285):     # speed up from stop to full speed\n        motor.duty_u16(speed)\n        time.sleep_ms(40)\n    print(\"Full speed\")\n    time.sleep(2)\n    for speed in range(65535, -1, -1285):   # slow down to a stop\n        motor.duty_u16(speed)\n        time.sleep_ms(40)\n    print(\"Stopped\")\n    time.sleep(2)\n",
+    "programName": "10-DC-Motor-Transistor.py"
+   }
+  },
+  {
+   "id": "q1",
+   "kind": "npn",
+   "x": 149.0,
+   "y": 94.0,
+   "rotation": 0,
+   "flipH": false,
+   "flipV": false,
+   "props": {}
+  },
+  {
+   "id": "r1",
+   "kind": "resistor",
+   "x": 124.0,
+   "y": 139.0,
+   "rotation": 0,
+   "flipH": false,
+   "flipV": false,
+   "props": {
+    "ohms": "1000"
+   }
+  },
+  {
+   "id": "d1",
+   "kind": "diode",
+   "x": 174.0,
+   "y": 69.0,
+   "rotation": 0,
+   "flipH": false,
+   "flipV": false,
+   "props": {}
+  },
+  {
+   "id": "m1",
+   "kind": "dc-motor",
+   "x": 180,
+   "y": -90,
+   "rotation": 0,
+   "flipH": false,
+   "flipV": false,
+   "props": {}
+  },
+  {
+   "id": "bat1",
+   "kind": "battery-9v",
+   "x": 300,
+   "y": -110,
+   "rotation": 0,
+   "flipH": false,
+   "flipV": false,
+   "props": {}
+  }
+ ],
+ "wires": [
+  {
+   "id": "w1",
+   "from": {
+    "type": "pin",
+    "part": "esp1",
+    "pin": "3V3.1"
+   },
+   "to": {
+    "type": "hole",
+    "hole": "bp1"
+   },
+   "color": "#d62f2f",
+   "points": [],
+   "curved": false
+  },
+  {
+   "id": "w2",
+   "from": {
+    "type": "pin",
+    "part": "esp1",
+    "pin": "GND.1"
+   },
+   "to": {
+    "type": "hole",
+    "hole": "bn1"
+   },
+   "color": "#262626",
+   "points": [],
+   "curved": false
+  },
+  {
+   "id": "w3",
+   "from": {
+    "type": "pin",
+    "part": "esp1",
+    "pin": "D6"
+   },
+   "to": {
+    "type": "hole",
+    "hole": "j11"
+   },
+   "color": "#f07c16",
+   "points": [],
+   "curved": false
+  },
+  {
+   "id": "w4",
+   "from": {
+    "type": "hole",
+    "hole": "j14"
+   },
+   "to": {
+    "type": "hole",
+    "hole": "bn11"
+   },
+   "color": "#262626",
+   "points": [],
+   "curved": false
+  },
+  {
+   "id": "w5",
+   "from": {
+    "type": "hole",
+    "hole": "e16"
+   },
+   "to": {
+    "type": "hole",
+    "hole": "f16"
+   },
+   "color": "#8c8c8c",
+   "points": [],
+   "curved": false
+  },
+  {
+   "id": "w6",
+   "from": {
+    "type": "pin",
+    "part": "bat1",
+    "pin": "+"
+   },
+   "to": {
+    "type": "hole",
+    "hole": "a20"
+   },
+   "color": "#d62f2f",
+   "points": [],
+   "curved": false
+  },
+  {
+   "id": "w7",
+   "from": {
+    "type": "pin",
+    "part": "m1",
+    "pin": "1"
+   },
+   "to": {
+    "type": "hole",
+    "hole": "b20"
+   },
+   "color": "#d62f2f",
+   "points": [],
+   "curved": false
+  },
+  {
+   "id": "w8",
+   "from": {
+    "type": "pin",
+    "part": "m1",
+    "pin": "2"
+   },
+   "to": {
+    "type": "hole",
+    "hole": "b16"
+   },
+   "color": "#1e6fd9",
+   "points": [],
+   "curved": false
+  },
+  {
+   "id": "w9",
+   "from": {
+    "type": "pin",
+    "part": "bat1",
+    "pin": "-"
+   },
+   "to": {
+    "type": "hole",
+    "hole": "tn24"
+   },
+   "color": "#262626",
+   "points": [],
+   "curved": false
+  },
+  {
+   "id": "w10",
+   "from": {
+    "type": "hole",
+    "hole": "tn24"
+   },
+   "to": {
+    "type": "hole",
+    "hole": "bn24"
+   },
+   "color": "#262626",
+   "points": [],
+   "curved": false
+  }
+ ]
+}

@@ -1,0 +1,169 @@
+{
+ "format": 2,
+ "breadboard": "half",
+ "parts": [
+  {
+   "id": "esp1",
+   "kind": "esp8266-nodemcu",
+   "x": -300,
+   "y": 60,
+   "rotation": 0,
+   "flipH": false,
+   "flipV": false,
+   "props": {
+    "program": "\"\"\"\n  LDR Night Light\n  Switches an LED on when it gets dark.\n\n  The LDR (light dependent resistor) and a 10 k resistor make a voltage\n  divider. In bright light the LDR's resistance is low and the voltage on\n  the analog pin is high. In the dark it is low.\n  In VSA Simulator, click the LDR and move the light slider.\n\n  The ESP8266 has only one analog pin, A0. On the NodeMCU board it reads\n  0 to about 3.2 V.\n\n  The circuit:\n  - LDR: 3V3 -> LDR -> A0\n  - 10 k resistor: A0 -> GND\n  - LED: D6 (GPIO12) -> 220 ohm resistor -> LED anode, LED cathode -> GND\n\n  You can modify this code and save it with another file name to simulate in\n  VSA Simulator.\n\n  Modified 03 November 2026 by Prof. Dattaraj S. Vidyasagar\n  Modified 04 November 2026 by Prof. Yash D. Vidyasagar\n\n  This example code is in the public domain.\n  For a great collection of example codes to simulate on VSA Simulator,\n  visit: https://github.com/dsvakola/VSA-Simulator\n  Or visit our official website: https://vsa.edu.in/\n  To check our collection of useful software, visit: https://github.com/dsvakola/software\n\"\"\"\n\nfrom machine import Pin, ADC\nimport time\n\nldr = ADC(0)\nled = Pin(12, Pin.OUT)\nDARK_LEVEL = 20000   # below this reading we call it \"dark\"\n\nwhile True:\n    light = ldr.read_u16()   # high = bright, low = dark\n    print(\"Light level:\", light)\n    if light < DARK_LEVEL:\n        led.value(1)   # dark: switch the light on\n    else:\n        led.value(0)   # bright: switch it off\n    time.sleep(0.3)\n",
+    "programName": "05-LDR-Night-Light.py"
+   }
+  },
+  {
+   "id": "s1",
+   "kind": "ldr",
+   "x": 89.0,
+   "y": 94.0,
+   "rotation": 0,
+   "flipH": false,
+   "flipV": false,
+   "props": {}
+  },
+  {
+   "id": "r2",
+   "kind": "resistor",
+   "x": 104.0,
+   "y": 139.0,
+   "rotation": 0,
+   "flipH": false,
+   "flipV": false,
+   "props": {
+    "ohms": "10000"
+   }
+  },
+  {
+   "id": "r1",
+   "kind": "resistor",
+   "x": 194.0,
+   "y": 139.0,
+   "rotation": 0,
+   "flipH": false,
+   "flipV": false,
+   "props": {
+    "ohms": "220"
+   }
+  },
+  {
+   "id": "led1",
+   "kind": "led",
+   "x": 229.0,
+   "y": 84.0,
+   "rotation": 0,
+   "flipH": false,
+   "flipV": false,
+   "props": {
+    "color": "yellow"
+   }
+  }
+ ],
+ "wires": [
+  {
+   "id": "w1",
+   "from": {
+    "type": "pin",
+    "part": "esp1",
+    "pin": "3V3.1"
+   },
+   "to": {
+    "type": "hole",
+    "hole": "bp1"
+   },
+   "color": "#d62f2f",
+   "points": [],
+   "curved": false
+  },
+  {
+   "id": "w2",
+   "from": {
+    "type": "pin",
+    "part": "esp1",
+    "pin": "GND.1"
+   },
+   "to": {
+    "type": "hole",
+    "hole": "bn1"
+   },
+   "color": "#262626",
+   "points": [],
+   "curved": false
+  },
+  {
+   "id": "w3",
+   "from": {
+    "type": "hole",
+    "hole": "j8"
+   },
+   "to": {
+    "type": "hole",
+    "hole": "bp6"
+   },
+   "color": "#d62f2f",
+   "points": [],
+   "curved": false
+  },
+  {
+   "id": "w4",
+   "from": {
+    "type": "hole",
+    "hole": "j13"
+   },
+   "to": {
+    "type": "hole",
+    "hole": "bn10"
+   },
+   "color": "#262626",
+   "points": [],
+   "curved": false
+  },
+  {
+   "id": "w5",
+   "from": {
+    "type": "pin",
+    "part": "esp1",
+    "pin": "A0"
+   },
+   "to": {
+    "type": "hole",
+    "hole": "j9"
+   },
+   "color": "#f5c400",
+   "points": [],
+   "curved": false
+  },
+  {
+   "id": "w6",
+   "from": {
+    "type": "hole",
+    "hole": "j23"
+   },
+   "to": {
+    "type": "hole",
+    "hole": "bn19"
+   },
+   "color": "#262626",
+   "points": [],
+   "curved": false
+  },
+  {
+   "id": "w7",
+   "from": {
+    "type": "pin",
+    "part": "esp1",
+    "pin": "D6"
+   },
+   "to": {
+    "type": "hole",
+    "hole": "j18"
+   },
+   "color": "#f07c16",
+   "points": [],
+   "curved": false
+  }
+ ]
+}

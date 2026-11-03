@@ -1,0 +1,97 @@
+{
+ "format": 2,
+ "breadboard": "none",
+ "parts": [
+  {
+   "id": "esp1",
+   "kind": "esp32-devkit",
+   "x": 0,
+   "y": 0,
+   "rotation": 0,
+   "flipH": false,
+   "flipV": false,
+   "props": {
+    "program": "\"\"\"\n  I2C LCD Display\n  Shows a title and a running seconds counter on a 16x2 I2C LCD.\n\n  The LCD has a small I2C board on its back (address 0x27), so it needs\n  only 4 wires. It needs 5 V, so it takes its power from VIN.\n\n  You do not need to copy any library files; VSA Simulator adds them\n  itself. On a real board, copy machine_i2c_lcd.py and lcd_api.py onto the board with\n  Thonny first.\n\n  The circuit:\n  - LCD GND -> GND, VCC -> VIN\n  - SDA -> D21 (GPIO21)\n  - SCL -> D22 (GPIO22)\n\n  You can modify this code and save it with another file name to simulate in\n  VSA Simulator.\n\n  Modified 03 November 2026 by Prof. Dattaraj S. Vidyasagar\n  Modified 04 November 2026 by Prof. Yash D. Vidyasagar\n\n  This example code is in the public domain.\n  For a great collection of example codes to simulate on VSA Simulator,\n  visit: https://github.com/dsvakola/VSA-Simulator\n  Or visit our official website: https://vsa.edu.in/\n  To check our collection of useful software, visit: https://github.com/dsvakola/software\n\"\"\"\n\nfrom machine import Pin, I2C\nfrom machine_i2c_lcd import I2cLcd\nimport time\n\ni2c = I2C(0, sda=Pin(21), scl=Pin(22))\nlcd = I2cLcd(i2c, 0x27, 2, 16)   # address, 2 lines, 16 columns\n\nlcd.backlight_on()\nlcd.move_to(0, 0)        # column 0, line 0 (the top line)\nlcd.putstr(\"VSA Simulator\")\nlcd.move_to(0, 1)        # column 0, line 1 (the bottom line)\nlcd.putstr(\"Seconds: \")\nstart = time.ticks_ms()\n\nwhile True:\n    seconds = time.ticks_diff(time.ticks_ms(), start) // 1000\n    lcd.move_to(9, 1)    # just after \"Seconds: \"\n    lcd.putstr(str(seconds))\n    time.sleep_ms(200)\n",
+    "programName": "18-I2C-LCD.py"
+   }
+  },
+  {
+   "id": "lcd1",
+   "kind": "lcd-i2c",
+   "x": 330,
+   "y": 20,
+   "rotation": 0,
+   "flipH": false,
+   "flipV": false,
+   "props": {
+    "address": "0x27"
+   }
+  }
+ ],
+ "wires": [
+  {
+   "id": "w1",
+   "from": {
+    "type": "pin",
+    "part": "lcd1",
+    "pin": "GND"
+   },
+   "to": {
+    "type": "pin",
+    "part": "esp1",
+    "pin": "GND.2"
+   },
+   "color": "#262626",
+   "points": [],
+   "curved": false
+  },
+  {
+   "id": "w2",
+   "from": {
+    "type": "pin",
+    "part": "lcd1",
+    "pin": "VCC"
+   },
+   "to": {
+    "type": "pin",
+    "part": "esp1",
+    "pin": "VIN"
+   },
+   "color": "#d62f2f",
+   "points": [],
+   "curved": false
+  },
+  {
+   "id": "w3",
+   "from": {
+    "type": "pin",
+    "part": "lcd1",
+    "pin": "SDA"
+   },
+   "to": {
+    "type": "pin",
+    "part": "esp1",
+    "pin": "D21"
+   },
+   "color": "#1e6fd9",
+   "points": [],
+   "curved": false
+  },
+  {
+   "id": "w4",
+   "from": {
+    "type": "pin",
+    "part": "lcd1",
+    "pin": "SCL"
+   },
+   "to": {
+    "type": "pin",
+    "part": "esp1",
+    "pin": "D22"
+   },
+   "color": "#f5c400",
+   "points": [],
+   "curved": false
+  }
+ ]
+}

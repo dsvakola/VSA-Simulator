@@ -1,0 +1,104 @@
+{
+ "format": 2,
+ "breadboard": "half",
+ "parts": [
+  {
+   "id": "pico1",
+   "kind": "pico-w",
+   "x": -300,
+   "y": 60,
+   "rotation": 0,
+   "flipH": false,
+   "flipV": false,
+   "props": {
+    "program": "\"\"\"\n  DHT11 Temperature and Humidity\n  Reads the temperature and humidity from a DHT11 sensor.\n\n  MicroPython has the dht module built in, so no extra file is needed.\n  In VSA Simulator, click the DHT11 and move the temperature and humidity\n  sliders.\n\n  The circuit:\n  - DHT11 VCC -> 3V3(OUT)\n  - DHT11 DATA -> GP15\n  - DHT11 GND -> GND\n\n  You can modify this code and save it with another file name to simulate in\n  VSA Simulator.\n\n  Modified 03 November 2026 by Prof. Dattaraj S. Vidyasagar\n  Modified 04 November 2026 by Prof. Yash D. Vidyasagar\n\n  This example code is in the public domain.\n  For a great collection of example codes to simulate on VSA Simulator,\n  visit: https://github.com/dsvakola/VSA-Simulator\n  Or visit our official website: https://vsa.edu.in/\n  To check our collection of useful software, visit: https://github.com/dsvakola/software\n\"\"\"\n\nfrom machine import Pin\nimport dht\nimport time\n\nsensor = dht.DHT11(Pin(15))\n\nwhile True:\n    time.sleep(2)   # the DHT11 can be read about once every 2 seconds\n    try:\n        sensor.measure()\n    except OSError:\n        print(\"Could not read the DHT11. Check the wiring.\")\n        continue\n    print(\"Temperature:\", sensor.temperature(), \"C   Humidity:\", sensor.humidity(), \"%\")\n",
+    "programName": "13-DHT11.py"
+   }
+  },
+  {
+   "id": "dht1",
+   "kind": "dht11",
+   "x": 109.0,
+   "y": 64.0,
+   "rotation": 0,
+   "flipH": false,
+   "flipV": false,
+   "props": {}
+  }
+ ],
+ "wires": [
+  {
+   "id": "w1",
+   "from": {
+    "type": "pin",
+    "part": "pico1",
+    "pin": "3V3"
+   },
+   "to": {
+    "type": "hole",
+    "hole": "bp1"
+   },
+   "color": "#d62f2f",
+   "points": [],
+   "curved": false
+  },
+  {
+   "id": "w2",
+   "from": {
+    "type": "pin",
+    "part": "pico1",
+    "pin": "GND.8"
+   },
+   "to": {
+    "type": "hole",
+    "hole": "bn1"
+   },
+   "color": "#262626",
+   "points": [],
+   "curved": false
+  },
+  {
+   "id": "w3",
+   "from": {
+    "type": "hole",
+    "hole": "j10"
+   },
+   "to": {
+    "type": "hole",
+    "hole": "bp8"
+   },
+   "color": "#d62f2f",
+   "points": [],
+   "curved": false
+  },
+  {
+   "id": "w4",
+   "from": {
+    "type": "hole",
+    "hole": "j13"
+   },
+   "to": {
+    "type": "hole",
+    "hole": "bn10"
+   },
+   "color": "#262626",
+   "points": [],
+   "curved": false
+  },
+  {
+   "id": "w5",
+   "from": {
+    "type": "pin",
+    "part": "pico1",
+    "pin": "GP15"
+   },
+   "to": {
+    "type": "hole",
+    "hole": "j11"
+   },
+   "color": "#f5c400",
+   "points": [],
+   "curved": false
+  }
+ ]
+}

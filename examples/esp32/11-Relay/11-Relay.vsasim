@@ -1,0 +1,79 @@
+{
+ "format": 2,
+ "breadboard": "none",
+ "parts": [
+  {
+   "id": "esp1",
+   "kind": "esp32-devkit",
+   "x": 0,
+   "y": 0,
+   "rotation": 0,
+   "flipH": false,
+   "flipV": false,
+   "props": {
+    "program": "\"\"\"\n  Relay Switch\n  Switches a relay module on and off every two seconds.\n\n  A relay is a switch worked by an electromagnet, so a small pin can\n  switch a big load such as a lamp. The relay module needs 5 V, so it takes\n  its power from the VIN pin; its IN pin works with the board's 3.3 V\n  signal.\n\n  The circuit:\n  - Relay module VCC -> VIN\n  - Relay module GND -> GND\n  - Relay module IN -> D13 (GPIO13)\n\n  You can modify this code and save it with another file name to simulate in\n  VSA Simulator.\n\n  Modified 03 November 2026 by Prof. Dattaraj S. Vidyasagar\n  Modified 04 November 2026 by Prof. Yash D. Vidyasagar\n\n  This example code is in the public domain.\n  For a great collection of example codes to simulate on VSA Simulator,\n  visit: https://github.com/dsvakola/VSA-Simulator\n  Or visit our official website: https://vsa.edu.in/\n  To check our collection of useful software, visit: https://github.com/dsvakola/software\n\"\"\"\n\nfrom machine import Pin\nimport time\n\nrelay = Pin(13, Pin.OUT)\n\nwhile True:\n    relay.value(1)   # relay on\n    print(\"Relay ON\")\n    time.sleep(2)\n    relay.value(0)   # relay off\n    print(\"Relay OFF\")\n    time.sleep(2)\n",
+    "programName": "11-Relay.py"
+   }
+  },
+  {
+   "id": "rel1",
+   "kind": "relay",
+   "x": 320,
+   "y": 40,
+   "rotation": 0,
+   "flipH": false,
+   "flipV": false,
+   "props": {}
+  }
+ ],
+ "wires": [
+  {
+   "id": "w1",
+   "from": {
+    "type": "pin",
+    "part": "rel1",
+    "pin": "VCC"
+   },
+   "to": {
+    "type": "pin",
+    "part": "esp1",
+    "pin": "VIN"
+   },
+   "color": "#d62f2f",
+   "points": [],
+   "curved": false
+  },
+  {
+   "id": "w2",
+   "from": {
+    "type": "pin",
+    "part": "rel1",
+    "pin": "GND"
+   },
+   "to": {
+    "type": "pin",
+    "part": "esp1",
+    "pin": "GND.2"
+   },
+   "color": "#262626",
+   "points": [],
+   "curved": false
+  },
+  {
+   "id": "w3",
+   "from": {
+    "type": "pin",
+    "part": "rel1",
+    "pin": "IN"
+   },
+   "to": {
+    "type": "pin",
+    "part": "esp1",
+    "pin": "D13"
+   },
+   "color": "#f5c400",
+   "points": [],
+   "curved": false
+  }
+ ]
+}

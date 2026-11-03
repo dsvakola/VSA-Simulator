@@ -1,0 +1,104 @@
+{
+ "format": 2,
+ "breadboard": "half",
+ "parts": [
+  {
+   "id": "pico1",
+   "kind": "pico-w",
+   "x": -300,
+   "y": 60,
+   "rotation": 0,
+   "flipH": false,
+   "flipV": false,
+   "props": {
+    "program": "\"\"\"\n  Fading LED\n  Makes an LED slowly brighten and dim using PWM.\n\n  PWM switches the pin on and off very fast. The longer it stays on in\n  each cycle, the brighter the LED looks. duty_u16() takes a value from 0\n  (always off) to 65535 (always on).\n\n  The circuit:\n  - GP15 -> 220 ohm resistor -> LED anode (long leg)\n  - LED cathode (short leg) -> GND\n\n  You can modify this code and save it with another file name to simulate in\n  VSA Simulator.\n\n  Modified 03 November 2026 by Prof. Dattaraj S. Vidyasagar\n  Modified 04 November 2026 by Prof. Yash D. Vidyasagar\n\n  This example code is in the public domain.\n  For a great collection of example codes to simulate on VSA Simulator,\n  visit: https://github.com/dsvakola/VSA-Simulator\n  Or visit our official website: https://vsa.edu.in/\n  To check our collection of useful software, visit: https://github.com/dsvakola/software\n\"\"\"\n\nfrom machine import Pin, PWM\nimport time\n\nled = PWM(Pin(15))\nled.freq(1000)          # 1000 on/off cycles every second\n\nwhile True:\n    # Brighten: from off to full brightness in small steps.\n    for duty in range(0, 65536, 1285):\n        led.duty_u16(duty)\n        time.sleep_ms(30)\n    # Dim: back down to off.\n    for duty in range(65535, -1, -1285):\n        led.duty_u16(duty)\n        time.sleep_ms(30)\n",
+    "programName": "03-Fade.py"
+   }
+  },
+  {
+   "id": "r1",
+   "kind": "resistor",
+   "x": 114.0,
+   "y": 139.0,
+   "rotation": 0,
+   "flipH": false,
+   "flipV": false,
+   "props": {
+    "ohms": "220"
+   }
+  },
+  {
+   "id": "led1",
+   "kind": "led",
+   "x": 149.0,
+   "y": 84.0,
+   "rotation": 0,
+   "flipH": false,
+   "flipV": false,
+   "props": {
+    "color": "green"
+   }
+  }
+ ],
+ "wires": [
+  {
+   "id": "w1",
+   "from": {
+    "type": "pin",
+    "part": "pico1",
+    "pin": "3V3"
+   },
+   "to": {
+    "type": "hole",
+    "hole": "bp1"
+   },
+   "color": "#d62f2f",
+   "points": [],
+   "curved": false
+  },
+  {
+   "id": "w2",
+   "from": {
+    "type": "pin",
+    "part": "pico1",
+    "pin": "GND.8"
+   },
+   "to": {
+    "type": "hole",
+    "hole": "bn1"
+   },
+   "color": "#262626",
+   "points": [],
+   "curved": false
+  },
+  {
+   "id": "w3",
+   "from": {
+    "type": "hole",
+    "hole": "j15"
+   },
+   "to": {
+    "type": "hole",
+    "hole": "bn12"
+   },
+   "color": "#262626",
+   "points": [],
+   "curved": false
+  },
+  {
+   "id": "w4",
+   "from": {
+    "type": "pin",
+    "part": "pico1",
+    "pin": "GP15"
+   },
+   "to": {
+    "type": "hole",
+    "hole": "j10"
+   },
+   "color": "#f07c16",
+   "points": [],
+   "curved": false
+  }
+ ]
+}
