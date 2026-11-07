@@ -123,6 +123,10 @@ Developed by **Prof. Dattaraj S. Vidyasagar** and **Prof. Yash D. Vidyasagar** f
 VSA Simulator is free software under the [GNU General Public License v3.0](LICENSE). Third-party components keep
 their own licences; see [NOTICE](NOTICE).
 
+## Privacy
+
+VSA Simulator collects and sends nothing. Read the [Privacy Policy](PRIVACY.md).
+
 The example programs in this repository are in the public domain.
 
 Arduino, Raspberry Pi and Espressif are trademarks of their respective owners. VSA Simulator is compatible with
