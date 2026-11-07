@@ -1,0 +1,116 @@
+{
+ "format": 2,
+ "breadboard": "half",
+ "parts": [
+  {
+   "id": "dev1",
+   "kind": "dev-atmega128",
+   "x": -390.0,
+   "y": 70,
+   "rotation": 0,
+   "flipH": false,
+   "flipV": false,
+   "props": {
+    "mhz": "16",
+    "program": ":100000000C9446000C9450000C9450000C9450003A\n:100010000C9450000C9450000C9450000C94500020\n:100020000C9450000C9450000C9450000C94500010\n:100030000C9450000C9450000C9450000C94500000\n:100040000C9450000C9450000C9450000C945000F0\n:100050000C9450000C9450000C9450000C945000E0\n:100060000C9450000C9450000C9450000C945000D0\n:100070000C9450000C9450000C9450000C945000C0\n:100080000C9450000C9450000C94500011241FBE8E\n:10009000CFEFD0E1DEBFCDBF0E9452000C946F00C5\n:1000A0000C940000BC9A8AE683BF25E030E090E023\n:1000B00080E081BF820F931FAC01415051094E3F38\n:1000C000510518F03195219531094FEF56E761E060\n:1000D000415050406040E1F700C00000EACFF89482\n:0200E000FFCF50\n:00000001FF\n",
+    "programName": "14-Fade-C.hex"
+   }
+  },
+  {
+   "id": "r1",
+   "kind": "resistor",
+   "x": 74.0,
+   "y": 139.0,
+   "rotation": 0,
+   "flipH": false,
+   "flipV": false,
+   "props": {
+    "ohms": "220"
+   }
+  },
+  {
+   "id": "led1",
+   "kind": "led",
+   "x": 109.0,
+   "y": 84.0,
+   "rotation": 0,
+   "flipH": false,
+   "flipV": false,
+   "props": {
+    "color": "red"
+   }
+  }
+ ],
+ "wires": [
+  {
+   "id": "w1",
+   "from": {
+    "type": "pin",
+    "part": "dev1",
+    "pin": "GND.2"
+   },
+   "to": {
+    "type": "hole",
+    "hole": "bn1"
+   },
+   "color": "#262626",
+   "points": [
+    {
+     "x": -70.0,
+     "y": 232.0
+    },
+    {
+     "x": 34.0,
+     "y": 232.0
+    }
+   ],
+   "curved": false
+  },
+  {
+   "id": "w3",
+   "from": {
+    "type": "pin",
+    "part": "dev1",
+    "pin": "PB4"
+   },
+   "to": {
+    "type": "hole",
+    "hole": "j6"
+   },
+   "color": "#f07c16",
+   "points": [
+    {
+     "x": -250.0,
+     "y": -12.0
+    },
+    {
+     "x": -8.0,
+     "y": -12.0
+    },
+    {
+     "x": -8.0,
+     "y": 226.0
+    },
+    {
+     "x": 74.0,
+     "y": 226.0
+    }
+   ],
+   "curved": false
+  },
+  {
+   "id": "w4",
+   "from": {
+    "type": "hole",
+    "hole": "j11"
+   },
+   "to": {
+    "type": "hole",
+    "hole": "bn9"
+   },
+   "color": "#262626",
+   "points": [],
+   "curved": false
+  }
+ ]
+}

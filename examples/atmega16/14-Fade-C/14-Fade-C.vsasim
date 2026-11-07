@@ -1,0 +1,117 @@
+{
+ "format": 2,
+ "breadboard": "half",
+ "parts": [
+  {
+   "id": "dev1",
+   "kind": "dev-atmega16",
+   "x": -270.0,
+   "y": 70,
+   "rotation": 0,
+   "flipH": false,
+   "flipV": false,
+   "props": {
+    "chip": "atmega16",
+    "mhz": "16",
+    "program": ":100000000C942A000C9434000C9434000C943400AA\n:100010000C9434000C9434000C9434000C94340090\n:100020000C9434000C9434000C9434000C94340080\n:100030000C9434000C9434000C9434000C94340070\n:100040000C9434000C9434000C9434000C94340060\n:100050000C94340011241FBECFE5D4E0DEBFCDBF29\n:100060000E9436000C9453000C940000BB9A8AE660\n:1000700083BF25E030E090E080E08CBF820F931FCB\n:10008000AC01415051094E3F510518F03195219571\n:1000900031094FEF56E761E0415050406040E1F7D1\n:0A00A00000C00000EACFF894FFCF83\n:00000001FF\n",
+    "programName": "14-Fade-C.hex"
+   }
+  },
+  {
+   "id": "r1",
+   "kind": "resistor",
+   "x": 74.0,
+   "y": 139.0,
+   "rotation": 0,
+   "flipH": false,
+   "flipV": false,
+   "props": {
+    "ohms": "220"
+   }
+  },
+  {
+   "id": "led1",
+   "kind": "led",
+   "x": 109.0,
+   "y": 84.0,
+   "rotation": 0,
+   "flipH": false,
+   "flipV": false,
+   "props": {
+    "color": "red"
+   }
+  }
+ ],
+ "wires": [
+  {
+   "id": "w1",
+   "from": {
+    "type": "pin",
+    "part": "dev1",
+    "pin": "GND.2"
+   },
+   "to": {
+    "type": "hole",
+    "hole": "bn1"
+   },
+   "color": "#262626",
+   "points": [
+    {
+     "x": -80.0,
+     "y": 232.0
+    },
+    {
+     "x": 34.0,
+     "y": 232.0
+    }
+   ],
+   "curved": false
+  },
+  {
+   "id": "w3",
+   "from": {
+    "type": "pin",
+    "part": "dev1",
+    "pin": "PB3"
+   },
+   "to": {
+    "type": "hole",
+    "hole": "j6"
+   },
+   "color": "#f07c16",
+   "points": [
+    {
+     "x": -140.0,
+     "y": -12.0
+    },
+    {
+     "x": -8.0,
+     "y": -12.0
+    },
+    {
+     "x": -8.0,
+     "y": 226.0
+    },
+    {
+     "x": 74.0,
+     "y": 226.0
+    }
+   ],
+   "curved": false
+  },
+  {
+   "id": "w4",
+   "from": {
+    "type": "hole",
+    "hole": "j11"
+   },
+   "to": {
+    "type": "hole",
+    "hole": "bn9"
+   },
+   "color": "#262626",
+   "points": [],
+   "curved": false
+  }
+ ]
+}

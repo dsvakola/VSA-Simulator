@@ -42,7 +42,20 @@
     "pin": "GND.8"
    },
    "color": "#262626",
-   "points": [],
+   "points": [
+    {
+     "x": 328.0,
+     "y": 75.0
+    },
+    {
+     "x": 328.0,
+     "y": -2.0
+    },
+    {
+     "x": 185.0,
+     "y": -2.0
+    }
+   ],
    "curved": false
   },
   {
@@ -58,7 +71,20 @@
     "pin": "VBUS"
    },
    "color": "#d62f2f",
-   "points": [],
+   "points": [
+    {
+     "x": 322.0,
+     "y": 85.0
+    },
+    {
+     "x": 322.0,
+     "y": -8.0
+    },
+    {
+     "x": 15.0,
+     "y": -8.0
+    }
+   ],
    "curved": false
   },
   {
@@ -73,8 +99,13 @@
     "part": "pico1",
     "pin": "GP4"
    },
-   "color": "#1e6fd9",
-   "points": [],
+   "color": "#f07c16",
+   "points": [
+    {
+     "x": 65.0,
+     "y": 95.0
+    }
+   ],
    "curved": false
   },
   {
@@ -89,8 +120,13 @@
     "part": "pico1",
     "pin": "GP5"
    },
-   "color": "#f5c400",
-   "points": [],
+   "color": "#2f9e44",
+   "points": [
+    {
+     "x": 75.0,
+     "y": 105.0
+    }
+   ],
    "curved": false
   }
  ]

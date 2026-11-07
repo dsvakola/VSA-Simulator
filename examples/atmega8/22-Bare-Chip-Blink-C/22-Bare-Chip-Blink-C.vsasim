@@ -1,0 +1,307 @@
+{
+ "format": 2,
+ "breadboard": "full",
+ "parts": [
+  {
+   "id": "ps1",
+   "kind": "dc-supply",
+   "x": 700,
+   "y": 40,
+   "rotation": 0,
+   "flipH": false,
+   "flipV": false,
+   "props": {
+    "volts": "5"
+   }
+  },
+  {
+   "id": "u1",
+   "kind": "atmega8",
+   "x": 49.0,
+   "y": 89.0,
+   "rotation": 0,
+   "flipH": false,
+   "flipV": false,
+   "props": {
+    "program": ":1000000012C019C018C017C016C015C014C013C044\n:1000100012C011C010C00FC00EC00DC00CC00BC06C\n:100020000AC009C008C011241FBECFE5D4E0DEBF5E\n:10003000CDBF02D017C0E4CFB89AC09A2FEF83ED9E\n:1000400090E3215080409040E1F700C00000C0984C\n:100050002FEF83ED90E3215080409040E1F700C006\n:080060000000EBCFF894FFCF84\n:00000001FF\n",
+    "programName": "22-Bare-Chip-Blink-C.hex"
+   }
+  },
+  {
+   "id": "x1",
+   "kind": "crystal-caps",
+   "x": 119.0,
+   "y": 124.0,
+   "rotation": 180,
+   "flipH": false,
+   "flipV": false,
+   "props": {
+    "mhz": "16"
+   }
+  },
+  {
+   "id": "btn1",
+   "kind": "push-button",
+   "x": 224.0,
+   "y": 84.0,
+   "rotation": 0,
+   "flipH": false,
+   "flipV": false,
+   "props": {}
+  },
+  {
+   "id": "r1",
+   "kind": "resistor",
+   "x": 314.0,
+   "y": 139.0,
+   "rotation": 0,
+   "flipH": false,
+   "flipV": false,
+   "props": {
+    "ohms": "220"
+   }
+  },
+  {
+   "id": "led1",
+   "kind": "led",
+   "x": 349.0,
+   "y": 84.0,
+   "rotation": 0,
+   "flipH": false,
+   "flipV": false,
+   "props": {
+    "color": "red"
+   }
+  }
+ ],
+ "wires": [
+  {
+   "id": "w1",
+   "from": {
+    "type": "pin",
+    "part": "ps1",
+    "pin": "+"
+   },
+   "to": {
+    "type": "hole",
+    "hole": "bp42"
+   },
+   "color": "#d62f2f",
+   "points": [
+    {
+     "x": 740.0,
+     "y": -24.0
+    },
+    {
+     "x": 682.0,
+     "y": -24.0
+    },
+    {
+     "x": 682.0,
+     "y": 238.0
+    },
+    {
+     "x": 524.0,
+     "y": 238.0
+    }
+   ],
+   "curved": false
+  },
+  {
+   "id": "w2",
+   "from": {
+    "type": "pin",
+    "part": "ps1",
+    "pin": "-"
+   },
+   "to": {
+    "type": "hole",
+    "hole": "bn41"
+   },
+   "color": "#262626",
+   "points": [
+    {
+     "x": 770.0,
+     "y": -30.0
+    },
+    {
+     "x": 688.0,
+     "y": -30.0
+    },
+    {
+     "x": 688.0,
+     "y": 244.0
+    },
+    {
+     "x": 514.0,
+     "y": 244.0
+    }
+   ],
+   "curved": false
+  },
+  {
+   "id": "w3",
+   "from": {
+    "type": "hole",
+    "hole": "j10"
+   },
+   "to": {
+    "type": "hole",
+    "hole": "bp8"
+   },
+   "color": "#d62f2f",
+   "points": [],
+   "curved": false
+  },
+  {
+   "id": "w4",
+   "from": {
+    "type": "hole",
+    "hole": "j11"
+   },
+   "to": {
+    "type": "hole",
+    "hole": "bn9"
+   },
+   "color": "#262626",
+   "points": [],
+   "curved": false
+  },
+  {
+   "id": "w5",
+   "from": {
+    "type": "hole",
+    "hole": "a12"
+   },
+   "to": {
+    "type": "hole",
+    "hole": "bp10"
+   },
+   "color": "#d62f2f",
+   "points": [
+    {
+     "x": 134.0,
+     "y": -18.0
+    },
+    {
+     "x": -13.0,
+     "y": -18.0
+    },
+    {
+     "x": -13.0,
+     "y": 232.0
+    },
+    {
+     "x": 134.0,
+     "y": 232.0
+    }
+   ],
+   "curved": false
+  },
+  {
+   "id": "w6",
+   "from": {
+    "type": "hole",
+    "hole": "a10"
+   },
+   "to": {
+    "type": "hole",
+    "hole": "bn7"
+   },
+   "color": "#262626",
+   "points": [
+    {
+     "x": 114.0,
+     "y": -12.0
+    },
+    {
+     "x": -8.0,
+     "y": -12.0
+    },
+    {
+     "x": -8.0,
+     "y": 226.0
+    },
+    {
+     "x": 104.0,
+     "y": 226.0
+    }
+   ],
+   "curved": false
+  },
+  {
+   "id": "w7",
+   "from": {
+    "type": "hole",
+    "hole": "j4"
+   },
+   "to": {
+    "type": "hole",
+    "hole": "j22"
+   },
+   "color": "#f07c16",
+   "points": [
+    {
+     "x": 54.0,
+     "y": 172.0
+    },
+    {
+     "x": 234.0,
+     "y": 172.0
+    }
+   ],
+   "curved": false
+  },
+  {
+   "id": "w8",
+   "from": {
+    "type": "hole",
+    "hole": "j24"
+   },
+   "to": {
+    "type": "hole",
+    "hole": "bn20"
+   },
+   "color": "#262626",
+   "points": [],
+   "curved": false
+  },
+  {
+   "id": "w9",
+   "from": {
+    "type": "hole",
+    "hole": "j17"
+   },
+   "to": {
+    "type": "hole",
+    "hole": "j30"
+   },
+   "color": "#2f9e44",
+   "points": [
+    {
+     "x": 184.0,
+     "y": 176.0
+    },
+    {
+     "x": 314.0,
+     "y": 176.0
+    }
+   ],
+   "curved": false
+  },
+  {
+   "id": "w10",
+   "from": {
+    "type": "hole",
+    "hole": "j35"
+   },
+   "to": {
+    "type": "hole",
+    "hole": "bn29"
+   },
+   "color": "#262626",
+   "points": [],
+   "curved": false
+  }
+ ]
+}

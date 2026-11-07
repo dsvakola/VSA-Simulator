@@ -1,0 +1,177 @@
+{
+ "format": 2,
+ "breadboard": "half",
+ "parts": [
+  {
+   "id": "dev1",
+   "kind": "dev-atmega8",
+   "x": -250.0,
+   "y": 70,
+   "rotation": 0,
+   "flipH": false,
+   "flipV": false,
+   "props": {
+    "mhz": "16",
+    "program": ":1000000012C019C018C017C016C015C014C013C044\n:1000100012C011C010C00FC00EC00DC00CC00BC06C\n:100020000AC009C008C011241FBECFE5D4E0DEBF5E\n:10003000CDBF28D049C0E4CF28EE33E0482F429FFF\n:10004000C001439F900D112464EB70E029D06851EA\n:100050007C4F85E0C29A9B0195E39A95F1F70000E9\n:100060002A5031092A303105B8F7C2982FEF39EFFD\n:1000700040E0215030404040E1F700C00000815096\n:1000800049F70895BA9AC0E08C2FD6DFC65FCE3B01\n:10009000D9F7C4EB8C2FD0DFCA50C63FD9F7F3CFC6\n:1000A000AA1BBB1B51E107C0AA1FBB1FA617B7079E\n:1000B00010F0A61BB70B881F991F5A95A9F78095BA\n:0C00C0009095BC01CD010895F894FFCF8D\n:00000001FF\n",
+    "programName": "18-Servo-Sweep-C.hex"
+   }
+  },
+  {
+   "id": "sv1",
+   "kind": "servo",
+   "x": 380,
+   "y": 60,
+   "rotation": 0,
+   "flipH": false,
+   "flipV": false,
+   "props": {}
+  }
+ ],
+ "wires": [
+  {
+   "id": "w1",
+   "from": {
+    "type": "pin",
+    "part": "dev1",
+    "pin": "GND.2"
+   },
+   "to": {
+    "type": "hole",
+    "hole": "bn2"
+   },
+   "color": "#262626",
+   "points": [
+    {
+     "x": -160.0,
+     "y": 226.0
+    },
+    {
+     "x": 44.0,
+     "y": 226.0
+    }
+   ],
+   "curved": false
+  },
+  {
+   "id": "w2",
+   "from": {
+    "type": "pin",
+    "part": "dev1",
+    "pin": "5V"
+   },
+   "to": {
+    "type": "hole",
+    "hole": "bp1"
+   },
+   "color": "#d62f2f",
+   "points": [
+    {
+     "x": -90.0,
+     "y": -12.0
+    },
+    {
+     "x": 352.0,
+     "y": -12.0
+    },
+    {
+     "x": 352.0,
+     "y": 232.0
+    },
+    {
+     "x": 34.0,
+     "y": 232.0
+    }
+   ],
+   "curved": false
+  },
+  {
+   "id": "w3",
+   "from": {
+    "type": "pin",
+    "part": "sv1",
+    "pin": "GND"
+   },
+   "to": {
+    "type": "hole",
+    "hole": "bn21"
+   },
+   "color": "#262626",
+   "points": [
+    {
+     "x": 480.0,
+     "y": -18.0
+    },
+    {
+     "x": 364.0,
+     "y": -18.0
+    },
+    {
+     "x": 364.0,
+     "y": 244.0
+    },
+    {
+     "x": 274.0,
+     "y": 244.0
+    }
+   ],
+   "curved": false
+  },
+  {
+   "id": "w4",
+   "from": {
+    "type": "pin",
+    "part": "sv1",
+    "pin": "V+"
+   },
+   "to": {
+    "type": "hole",
+    "hole": "bp20"
+   },
+   "color": "#d62f2f",
+   "points": [
+    {
+     "x": 490.0,
+     "y": -24.0
+    },
+    {
+     "x": 358.0,
+     "y": -24.0
+    },
+    {
+     "x": 358.0,
+     "y": 238.0
+    },
+    {
+     "x": 254.0,
+     "y": 238.0
+    }
+   ],
+   "curved": false
+  },
+  {
+   "id": "w5",
+   "from": {
+    "type": "pin",
+    "part": "sv1",
+    "pin": "SIG"
+   },
+   "to": {
+    "type": "pin",
+    "part": "dev1",
+    "pin": "PB2"
+   },
+   "color": "#f07c16",
+   "points": [
+    {
+     "x": 500.0,
+     "y": -28
+    },
+    {
+     "x": -130.0,
+     "y": -28
+    }
+   ],
+   "curved": false
+  }
+ ]
+}

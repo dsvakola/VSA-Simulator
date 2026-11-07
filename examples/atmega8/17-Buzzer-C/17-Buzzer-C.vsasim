@@ -1,0 +1,94 @@
+{
+ "format": 2,
+ "breadboard": "half",
+ "parts": [
+  {
+   "id": "dev1",
+   "kind": "dev-atmega8",
+   "x": -250.0,
+   "y": 70,
+   "rotation": 0,
+   "flipH": false,
+   "flipV": false,
+   "props": {
+    "mhz": "16",
+    "program": ":1000000012C019C018C017C016C015C014C013C044\n:1000100012C011C010C00FC00EC00DC00CC00BC06C\n:100020000AC009C008C011241FBECFE5D4E0DEBF5E\n:10003000CDBF02D023C0E4CFB89A83E0C09A2FEF9F\n:1000400032E597E0215030409040E1F700C00000D9\n:10005000C0982FEF32E597E0215030409040E1F713\n:1000600000C00000815051F72FEF3DE389E421509B\n:1000700030408040E1F700C00000DFCFF894FFCFB0\n:00000001FF\n",
+    "programName": "17-Buzzer-C.hex"
+   }
+  },
+  {
+   "id": "bz1",
+   "kind": "buzzer",
+   "x": 99.0,
+   "y": 84.0,
+   "rotation": 0,
+   "flipH": false,
+   "flipV": false,
+   "props": {}
+  }
+ ],
+ "wires": [
+  {
+   "id": "w1",
+   "from": {
+    "type": "pin",
+    "part": "dev1",
+    "pin": "GND.2"
+   },
+   "to": {
+    "type": "hole",
+    "hole": "bn1"
+   },
+   "color": "#262626",
+   "points": [
+    {
+     "x": -160.0,
+     "y": 226.0
+    },
+    {
+     "x": 34.0,
+     "y": 226.0
+    }
+   ],
+   "curved": false
+  },
+  {
+   "id": "w3",
+   "from": {
+    "type": "pin",
+    "part": "dev1",
+    "pin": "PB0"
+   },
+   "to": {
+    "type": "hole",
+    "hole": "a10"
+   },
+   "color": "#f07c16",
+   "points": [
+    {
+     "x": -150.0,
+     "y": -12.0
+    },
+    {
+     "x": 114.0,
+     "y": -12.0
+    }
+   ],
+   "curved": false
+  },
+  {
+   "id": "w4",
+   "from": {
+    "type": "hole",
+    "hole": "j10"
+   },
+   "to": {
+    "type": "hole",
+    "hole": "bn8"
+   },
+   "color": "#262626",
+   "points": [],
+   "curved": false
+  }
+ ]
+}

@@ -1,0 +1,116 @@
+{
+ "format": 2,
+ "breadboard": "half",
+ "parts": [
+  {
+   "id": "dev1",
+   "kind": "dev-atmega8",
+   "x": -250.0,
+   "y": 70,
+   "rotation": 0,
+   "flipH": false,
+   "flipV": false,
+   "props": {
+    "mhz": "16",
+    "program": ":1000000012C019C018C017C016C015C014C013C044\n:1000100012C011C010C00FC00EC00DC00CC00BC06C\n:100020000AC009C008C011241FBECFE5D4E0DEBF5E\n:10003000CDBF02D021C0E4CFB99A81E88FBD82E064\n:100040008EBD25E030E090E080E09BBD8ABD820F50\n:10005000931FAC01415051094E3F510518F03195A5\n:10006000219531094FEF56E761E041505040604023\n:0C007000E1F700C00000E9CFF894FFCFDA\n:00000001FF\n",
+    "programName": "14-Fade-C.hex"
+   }
+  },
+  {
+   "id": "r1",
+   "kind": "resistor",
+   "x": 74.0,
+   "y": 139.0,
+   "rotation": 0,
+   "flipH": false,
+   "flipV": false,
+   "props": {
+    "ohms": "220"
+   }
+  },
+  {
+   "id": "led1",
+   "kind": "led",
+   "x": 109.0,
+   "y": 84.0,
+   "rotation": 0,
+   "flipH": false,
+   "flipV": false,
+   "props": {
+    "color": "red"
+   }
+  }
+ ],
+ "wires": [
+  {
+   "id": "w1",
+   "from": {
+    "type": "pin",
+    "part": "dev1",
+    "pin": "GND.2"
+   },
+   "to": {
+    "type": "hole",
+    "hole": "bn1"
+   },
+   "color": "#262626",
+   "points": [
+    {
+     "x": -160.0,
+     "y": 226.0
+    },
+    {
+     "x": 34.0,
+     "y": 226.0
+    }
+   ],
+   "curved": false
+  },
+  {
+   "id": "w3",
+   "from": {
+    "type": "pin",
+    "part": "dev1",
+    "pin": "PB1"
+   },
+   "to": {
+    "type": "hole",
+    "hole": "j6"
+   },
+   "color": "#f07c16",
+   "points": [
+    {
+     "x": -140.0,
+     "y": -12.0
+    },
+    {
+     "x": -8.0,
+     "y": -12.0
+    },
+    {
+     "x": -8.0,
+     "y": 232.0
+    },
+    {
+     "x": 74.0,
+     "y": 232.0
+    }
+   ],
+   "curved": false
+  },
+  {
+   "id": "w4",
+   "from": {
+    "type": "hole",
+    "hole": "j11"
+   },
+   "to": {
+    "type": "hole",
+    "hole": "bn9"
+   },
+   "color": "#262626",
+   "points": [],
+   "curved": false
+  }
+ ]
+}

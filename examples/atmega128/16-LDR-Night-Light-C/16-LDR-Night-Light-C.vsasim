@@ -1,0 +1,231 @@
+{
+ "format": 2,
+ "breadboard": "half",
+ "parts": [
+  {
+   "id": "dev1",
+   "kind": "dev-atmega128",
+   "x": -390.0,
+   "y": 70,
+   "rotation": 0,
+   "flipH": false,
+   "flipV": false,
+   "props": {
+    "mhz": "16",
+    "program": ":100000000C9446000C945D000C945D000C945D0013\n:100010000C945D000C945D000C945D000C945D00EC\n:100020000C945D000C945D000C945D000C945D00DC\n:100030000C945D000C945D000C945D000C945D00CC\n:100040000C945D000C945D000C945D000C945D00BC\n:100050000C945D000C945D000C945D000C945D00AC\n:100060000C945D000C945D000C945D000C945D009C\n:100070000C945D000C945D000C945D000C945D008C\n:100080000C945D000C945D000C945D0011241FBE67\n:10009000CFEFD0E1DEBFCDBF11E0A0E0B1E0E8E4FA\n:1000A000F2E000E00BBF02C007900D92A231B10751\n:1000B000D9F70E9463000C9422010C9400005D9B10\n:1000C000FECF8CB90895CF93DF93CDB7DEB72C97D1\n:1000D0000FB6F894DEBF0FBECDBFB89A1092900055\n:1000E00087E689B988E18AB986E08093950080E443\n:1000F00087B987E886B980E4B82E9AE0492E512C5A\n:10010000612C712C20E3A22EB7B8369A3699FECF17\n:10011000E4B0F5B000E011E0F80181918F018111A8\n:1001200030C0B70190E080E061157105810591054F\n:1001300059F5A98201E010E001501109E1E0F0E079\n:10014000EC0FFD1FE00FF11F80810E945F00011581\n:10015000110591F70EE011E0F80181918F018111F5\n:100160002BC0FCE2EF16F1E0FF0648F5C09A2FEF36\n:1001700035EA8EE0215030408040E1F700C00000B9\n:10018000C3CF0E945F00C8CF9E012F5F3F4F690120\n:1001900010E000E00F5F1F4FA30192010E94E100F9\n:1001A000605DF60161936F01B901CA0161157105C6\n:1001B0008105910579F7C0CF0E945F00CDCFC0982F\n:1001C000D6CF052E97FB1EF400940E94F80057FD31\n:1001D00007D00E94000107FC03D04EF40C94F800F5\n:1001E00050954095309521953F4F4F4F5F4F089563\n:1001F00090958095709561957F4F8F4F9F4F089593\n:10020000A1E21A2EAA1BBB1BFD010DC0AA1FBB1F1A\n:10021000EE1FFF1FA217B307E407F50720F0A21B8C\n:10022000B30BE40BF50B661F771F881F991F1A94F9\n:1002300069F760957095809590959B01AC01BD0123\n:08024000CF010895F894FFCFEF\n:100248004C69676874206C6576656C3A20000D0A05\n:020258000000A4\n:00000001FF\n",
+    "programName": "16-LDR-Night-Light-C.hex"
+   }
+  },
+  {
+   "id": "ldr1",
+   "kind": "ldr",
+   "x": 109.0,
+   "y": 94.0,
+   "rotation": 0,
+   "flipH": false,
+   "flipV": false,
+   "props": {}
+  },
+  {
+   "id": "r10k",
+   "kind": "resistor",
+   "x": 124.0,
+   "y": 139.0,
+   "rotation": 0,
+   "flipH": false,
+   "flipV": false,
+   "props": {
+    "ohms": "10000"
+   }
+  },
+  {
+   "id": "r1",
+   "kind": "resistor",
+   "x": 214.0,
+   "y": 139.0,
+   "rotation": 0,
+   "flipH": false,
+   "flipV": false,
+   "props": {
+    "ohms": "220"
+   }
+  },
+  {
+   "id": "led1",
+   "kind": "led",
+   "x": 249.0,
+   "y": 84.0,
+   "rotation": 0,
+   "flipH": false,
+   "flipV": false,
+   "props": {
+    "color": "red"
+   }
+  }
+ ],
+ "wires": [
+  {
+   "id": "w1",
+   "from": {
+    "type": "pin",
+    "part": "dev1",
+    "pin": "GND.2"
+   },
+   "to": {
+    "type": "hole",
+    "hole": "bn2"
+   },
+   "color": "#262626",
+   "points": [
+    {
+     "x": -70.0,
+     "y": 232.0
+    },
+    {
+     "x": 44.0,
+     "y": 232.0
+    }
+   ],
+   "curved": false
+  },
+  {
+   "id": "w2",
+   "from": {
+    "type": "pin",
+    "part": "dev1",
+    "pin": "5V"
+   },
+   "to": {
+    "type": "hole",
+    "hole": "bp1"
+   },
+   "color": "#d62f2f",
+   "points": [
+    {
+     "x": -130.0,
+     "y": -12.0
+    },
+    {
+     "x": -8.0,
+     "y": -12.0
+    },
+    {
+     "x": -8.0,
+     "y": 226.0
+    },
+    {
+     "x": 34.0,
+     "y": 226.0
+    }
+   ],
+   "curved": false
+  },
+  {
+   "id": "w3",
+   "from": {
+    "type": "hole",
+    "hole": "j10"
+   },
+   "to": {
+    "type": "hole",
+    "hole": "bp8"
+   },
+   "color": "#d62f2f",
+   "points": [],
+   "curved": false
+  },
+  {
+   "id": "w4",
+   "from": {
+    "type": "hole",
+    "hole": "j11"
+   },
+   "to": {
+    "type": "pin",
+    "part": "dev1",
+    "pin": "PF0"
+   },
+   "color": "#2f9e44",
+   "points": [
+    {
+     "x": 124.0,
+     "y": 244.0
+    },
+    {
+     "x": -210.0,
+     "y": 244.0
+    }
+   ],
+   "curved": false
+  },
+  {
+   "id": "w5",
+   "from": {
+    "type": "hole",
+    "hole": "j15"
+   },
+   "to": {
+    "type": "hole",
+    "hole": "bn12"
+   },
+   "color": "#262626",
+   "points": [],
+   "curved": false
+  },
+  {
+   "id": "w6",
+   "from": {
+    "type": "pin",
+    "part": "dev1",
+    "pin": "PB0"
+   },
+   "to": {
+    "type": "hole",
+    "hole": "j20"
+   },
+   "color": "#f07c16",
+   "points": [
+    {
+     "x": -290.0,
+     "y": -18.0
+    },
+    {
+     "x": -13.0,
+     "y": -18.0
+    },
+    {
+     "x": -13.0,
+     "y": 238.0
+    },
+    {
+     "x": 214.0,
+     "y": 238.0
+    }
+   ],
+   "curved": false
+  },
+  {
+   "id": "w7",
+   "from": {
+    "type": "hole",
+    "hole": "j25"
+   },
+   "to": {
+    "type": "hole",
+    "hole": "bn20"
+   },
+   "color": "#262626",
+   "points": [
+    {
+     "x": 264.0,
+     "y": 172.0
+    },
+    {
+     "x": 254.0,
+     "y": 172.0
+    }
+   ],
+   "curved": false
+  }
+ ]
+}

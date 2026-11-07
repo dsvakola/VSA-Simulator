@@ -1,0 +1,204 @@
+{
+ "format": 2,
+ "breadboard": "half",
+ "parts": [
+  {
+   "id": "dev1",
+   "kind": "dev-atmega8",
+   "x": -250.0,
+   "y": 70,
+   "rotation": 0,
+   "flipH": false,
+   "flipV": false,
+   "props": {
+    "mhz": "16",
+    "program": ":1000000012C024C023C022C021C020C01FC01EC0F7\n:100010001DC01CC01BC01AC019C018C017C016C014\n:1000200015C014C013C011241FBECFE5D4E0DEBF3D\n:10003000CDBF10E0A0E6B0E0E6EFF1E002C0059031\n:100040000D92A837B107D9F744D0D3C0D9CF20E15A\n:10005000829FC0011124682B84EA86BF06B607FE82\n:10006000FDCF8EE483B984E886BF06B607FEFDCFD8\n:10007000862F8C6083B984E886BF06B607FEFDCF65\n:10008000686063B984E886BF06B607FEFDCF84E9E1\n:1000900086BF8FE891E00197F1F700C00000089556\n:1000A000CF93DF93C82FD62F82958F70D0DF6D2F1F\n:1000B0008C2F8F70DF91CF91CACFCF93DF93EC015C\n:1000C0008991811103C0DF91CF91089561E0E8DF4C\n:1000D000F7CFCF93DF93CDB7DEB728970FB6F8945D\n:1000E000DEBF0FBECDBF11B888E480B92FEF80E727\n:1000F00092E0215080409040E1F700C0000060E0B5\n:1001000083E0A5DF8FE19EE40197F1F700C00000D6\n:1001100060E083E09CDF60E083E099DF60E082E004\n:1001200096DF60E088E2BCDF60E08CE0B9DF60E091\n:1001300086E0B6DF60E081E0B3DF8FED9EE20197FD\n:10014000F1F700C0000060E080E8AADF80E690E000\n:10015000B4DF10E000E060E080ECA2DF8EE690E02B\n:10016000ACDF4AE0BE016F5F7F4FC8010FD0CE0108\n:100170000196A3DF9FEF23ED80E391502040804064\n:10018000E1F700C000000F5F1F4FE5CFBB274A30EB\n:1001900031F4992322F4BDE2909581959F4F01C0DF\n:1001A000BB27FB015527AA27880F991FAA1FA41751\n:1001B00010F0A41B83955051B9F7A05DAA3308F045\n:1001C000A95DA193009779F7B111B1931192CB0179\n:1001D00000C0DC01FC01672F71917723E1F73297B2\n:1001E00004C07C916D9370836291AE17BF07C8F312\n:0601F0000895F894FFCF12\n:1001F6005653412053696D756C61746F7200536577\n:08020600636F6E64733A20007F\n:00000001FF\n",
+    "programName": "20-I2C-LCD-C.hex"
+   }
+  },
+  {
+   "id": "lcd1",
+   "kind": "lcd-i2c",
+   "x": 380,
+   "y": 20,
+   "rotation": 0,
+   "flipH": false,
+   "flipV": false,
+   "props": {
+    "address": "0x27"
+   }
+  }
+ ],
+ "wires": [
+  {
+   "id": "w1",
+   "from": {
+    "type": "pin",
+    "part": "dev1",
+    "pin": "GND.2"
+   },
+   "to": {
+    "type": "hole",
+    "hole": "bn2"
+   },
+   "color": "#262626",
+   "points": [
+    {
+     "x": -160.0,
+     "y": 232.0
+    },
+    {
+     "x": 44.0,
+     "y": 232.0
+    }
+   ],
+   "curved": false
+  },
+  {
+   "id": "w2",
+   "from": {
+    "type": "pin",
+    "part": "dev1",
+    "pin": "5V"
+   },
+   "to": {
+    "type": "hole",
+    "hole": "bp1"
+   },
+   "color": "#d62f2f",
+   "points": [
+    {
+     "x": -90.0,
+     "y": -12.0
+    },
+    {
+     "x": -8.0,
+     "y": -12.0
+    },
+    {
+     "x": -8.0,
+     "y": 226.0
+    },
+    {
+     "x": 34.0,
+     "y": 226.0
+    }
+   ],
+   "curved": false
+  },
+  {
+   "id": "w3",
+   "from": {
+    "type": "pin",
+    "part": "lcd1",
+    "pin": "GND"
+   },
+   "to": {
+    "type": "hole",
+    "hole": "bn21"
+   },
+   "color": "#262626",
+   "points": [
+    {
+     "x": 378.0,
+     "y": 75.0
+    },
+    {
+     "x": 378.0,
+     "y": 214.0
+    },
+    {
+     "x": 274.0,
+     "y": 214.0
+    }
+   ],
+   "curved": false
+  },
+  {
+   "id": "w4",
+   "from": {
+    "type": "pin",
+    "part": "lcd1",
+    "pin": "VCC"
+   },
+   "to": {
+    "type": "hole",
+    "hole": "bp20"
+   },
+   "color": "#d62f2f",
+   "points": [
+    {
+     "x": 369.0,
+     "y": 85.0
+    },
+    {
+     "x": 369.0,
+     "y": 213.0
+    },
+    {
+     "x": 254.0,
+     "y": 213.0
+    }
+   ],
+   "curved": false
+  },
+  {
+   "id": "w5",
+   "from": {
+    "type": "pin",
+    "part": "lcd1",
+    "pin": "SDA"
+   },
+   "to": {
+    "type": "pin",
+    "part": "dev1",
+    "pin": "PC4"
+   },
+   "color": "#f07c16",
+   "points": [
+    {
+     "x": 366.0,
+     "y": 95.0
+    },
+    {
+     "x": 366.0,
+     "y": 237.0
+    },
+    {
+     "x": -190.0,
+     "y": 237.0
+    }
+   ],
+   "curved": false
+  },
+  {
+   "id": "w6",
+   "from": {
+    "type": "pin",
+    "part": "lcd1",
+    "pin": "SCL"
+   },
+   "to": {
+    "type": "pin",
+    "part": "dev1",
+    "pin": "PC5"
+   },
+   "color": "#2f9e44",
+   "points": [
+    {
+     "x": 360.0,
+     "y": 105.0
+    },
+    {
+     "x": 360.0,
+     "y": 227.0
+    },
+    {
+     "x": -180.0,
+     "y": 227.0
+    }
+   ],
+   "curved": false
+  }
+ ]
+}

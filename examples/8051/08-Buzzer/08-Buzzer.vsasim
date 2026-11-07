@@ -30,21 +30,6 @@
  ],
  "wires": [
   {
-   "id": "w1",
-   "from": {
-    "type": "pin",
-    "part": "dev1",
-    "pin": "GND.2"
-   },
-   "to": {
-    "type": "hole",
-    "hole": "bn1"
-   },
-   "color": "#262626",
-   "points": [],
-   "curved": false
-  },
-  {
    "id": "w2",
    "from": {
     "type": "pin",
@@ -56,7 +41,24 @@
     "hole": "bp1"
    },
    "color": "#d62f2f",
-   "points": [],
+   "points": [
+    {
+     "x": -90.0,
+     "y": -12.0
+    },
+    {
+     "x": -8.0,
+     "y": -12.0
+    },
+    {
+     "x": -8.0,
+     "y": 226.0
+    },
+    {
+     "x": 34.0,
+     "y": 226.0
+    }
+   ],
    "curved": false
   },
   {
@@ -70,8 +72,17 @@
     "type": "hole",
     "hole": "j10"
    },
-   "color": "#f5c400",
-   "points": [],
+   "color": "#f07c16",
+   "points": [
+    {
+     "x": -250.0,
+     "y": 232.0
+    },
+    {
+     "x": 114.0,
+     "y": 232.0
+    }
+   ],
    "curved": false
   },
   {
@@ -82,10 +93,27 @@
    },
    "to": {
     "type": "hole",
-    "hole": "bp8"
+    "hole": "bp9"
    },
    "color": "#d62f2f",
-   "points": [],
+   "points": [
+    {
+     "x": 114.0,
+     "y": -18.0
+    },
+    {
+     "x": -13.0,
+     "y": -18.0
+    },
+    {
+     "x": -13.0,
+     "y": 238.0
+    },
+    {
+     "x": 124.0,
+     "y": 238.0
+    }
+   ],
    "curved": false
   }
  ]

@@ -1,0 +1,205 @@
+{
+ "format": 2,
+ "breadboard": "half",
+ "parts": [
+  {
+   "id": "dev1",
+   "kind": "dev-atmega16",
+   "x": -270.0,
+   "y": 70,
+   "rotation": 0,
+   "flipH": false,
+   "flipV": false,
+   "props": {
+    "chip": "atmega16",
+    "mhz": "16",
+    "program": ":100000000C942A000C943F000C943F000C943F0089\n:100010000C943F000C943F000C943F000C943F0064\n:100020000C943F000C943F000C943F000C943F0054\n:100030000C943F000C943F000C943F000C943F0044\n:100040000C943F000C943F000C943F000C943F0034\n:100050000C943F0011241FBECFE5D4E0DEBFCDBF1E\n:1000600010E0A0E6B0E0E0E5F2E002C005900D92FD\n:10007000A837B107D9F70E9486000C9426010C948A\n:10008000000020E1829FC0011124682B84EA86BF12\n:1000900006B607FEFDCF8EE483B984E886BF06B6B8\n:1000A00007FEFDCF862F8C6083B984E886BF06B635\n:1000B00007FEFDCF686063B984E886BF06B607FE19\n:1000C000FDCF84E986BF8FE891E00197F1F700C08A\n:1000D00000000895CF93DF93C82FD62F82958F709D\n:1000E0000E9441006D2F8C2F8F70DF91CF910C9467\n:1000F0004100CF93DF93EC018991811103C0DF911F\n:10010000CF91089561E00E946A00F6CFCF93DF930C\n:10011000CDB7DEB728970FB6F894DEBF0FBECDBFC0\n:1001200011B888E480B92FEF80E792E02150804039\n:100130009040E1F700C0000060E083E00E944100D1\n:100140008FE19EE40197F1F700C0000060E083E0DA\n:100150000E94410060E083E00E94410060E082E094\n:100160000E94410060E088E20E946A0060E08CE04A\n:100170000E946A0060E086E00E946A0060E081E020\n:100180000E946A008FED9EE20197F1F700C0000027\n:1001900060E080E80E946A0080E690E00E947900BA\n:1001A00010E000E060E080EC0E946A008EE690E0E3\n:1001B0000E9479004AE0BE016F5F7F4FC8010E9434\n:1001C000F100CE0101960E9479009FEF23ED80E3BC\n:1001D000915020408040E1F700C000000F5F1F4FAA\n:1001E000E1CFBB274A3031F4992322F4BDE2909548\n:1001F00081959F4F0C94FD00BB27FB015527AA2733\n:10020000880F991FAA1FA41710F0A41B83955051A3\n:10021000B9F7A05DAA3308F0A95DA193009779F71B\n:10022000B111B1931192CB010C941601DC01FC01C8\n:10023000672F71917723E1F7329704C07C916D931A\n:1002400070836291AE17BF07C8F30895F894FFCF8B\n:100250005653412053696D756C61746F720053651C\n:08026000636F6E64733A200025\n:00000001FF\n",
+    "programName": "20-I2C-LCD-C.hex"
+   }
+  },
+  {
+   "id": "lcd1",
+   "kind": "lcd-i2c",
+   "x": 380,
+   "y": 20,
+   "rotation": 0,
+   "flipH": false,
+   "flipV": false,
+   "props": {
+    "address": "0x27"
+   }
+  }
+ ],
+ "wires": [
+  {
+   "id": "w1",
+   "from": {
+    "type": "pin",
+    "part": "dev1",
+    "pin": "GND.2"
+   },
+   "to": {
+    "type": "hole",
+    "hole": "bn2"
+   },
+   "color": "#262626",
+   "points": [
+    {
+     "x": -80.0,
+     "y": 232.0
+    },
+    {
+     "x": 44.0,
+     "y": 232.0
+    }
+   ],
+   "curved": false
+  },
+  {
+   "id": "w2",
+   "from": {
+    "type": "pin",
+    "part": "dev1",
+    "pin": "5V"
+   },
+   "to": {
+    "type": "hole",
+    "hole": "bp1"
+   },
+   "color": "#d62f2f",
+   "points": [
+    {
+     "x": -90.0,
+     "y": -12.0
+    },
+    {
+     "x": -8.0,
+     "y": -12.0
+    },
+    {
+     "x": -8.0,
+     "y": 226.0
+    },
+    {
+     "x": 34.0,
+     "y": 226.0
+    }
+   ],
+   "curved": false
+  },
+  {
+   "id": "w3",
+   "from": {
+    "type": "pin",
+    "part": "lcd1",
+    "pin": "GND"
+   },
+   "to": {
+    "type": "hole",
+    "hole": "bn21"
+   },
+   "color": "#262626",
+   "points": [
+    {
+     "x": 378.0,
+     "y": 75.0
+    },
+    {
+     "x": 378.0,
+     "y": 214.0
+    },
+    {
+     "x": 274.0,
+     "y": 214.0
+    }
+   ],
+   "curved": false
+  },
+  {
+   "id": "w4",
+   "from": {
+    "type": "pin",
+    "part": "lcd1",
+    "pin": "VCC"
+   },
+   "to": {
+    "type": "hole",
+    "hole": "bp20"
+   },
+   "color": "#d62f2f",
+   "points": [
+    {
+     "x": 369.0,
+     "y": 85.0
+    },
+    {
+     "x": 369.0,
+     "y": 213.0
+    },
+    {
+     "x": 254.0,
+     "y": 213.0
+    }
+   ],
+   "curved": false
+  },
+  {
+   "id": "w5",
+   "from": {
+    "type": "pin",
+    "part": "lcd1",
+    "pin": "SDA"
+   },
+   "to": {
+    "type": "pin",
+    "part": "dev1",
+    "pin": "PC1"
+   },
+   "color": "#f07c16",
+   "points": [
+    {
+     "x": 366.0,
+     "y": 95.0
+    },
+    {
+     "x": 366.0,
+     "y": 237.0
+    },
+    {
+     "x": -240.0,
+     "y": 237.0
+    }
+   ],
+   "curved": false
+  },
+  {
+   "id": "w6",
+   "from": {
+    "type": "pin",
+    "part": "lcd1",
+    "pin": "SCL"
+   },
+   "to": {
+    "type": "pin",
+    "part": "dev1",
+    "pin": "PC0"
+   },
+   "color": "#2f9e44",
+   "points": [
+    {
+     "x": 360.0,
+     "y": 105.0
+    },
+    {
+     "x": 360.0,
+     "y": 242.0
+    },
+    {
+     "x": -250.0,
+     "y": 242.0
+    }
+   ],
+   "curved": false
+  }
+ ]
+}

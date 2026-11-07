@@ -1,0 +1,94 @@
+{
+ "format": 2,
+ "breadboard": "half",
+ "parts": [
+  {
+   "id": "dev1",
+   "kind": "dev-atmega128",
+   "x": -390.0,
+   "y": 70,
+   "rotation": 0,
+   "flipH": false,
+   "flipV": false,
+   "props": {
+    "mhz": "16",
+    "program": ":100000000C9446000C9450000C9450000C9450003A\n:100010000C9450000C9450000C9450000C94500020\n:100020000C9450000C9450000C9450000C94500010\n:100030000C9450000C9450000C9450000C94500000\n:100040000C9450000C9450000C9450000C945000F0\n:100050000C9450000C9450000C9450000C945000E0\n:100060000C9450000C9450000C9450000C945000D0\n:100070000C9450000C9450000C9450000C945000C0\n:100080000C9450000C9450000C94500011241FBE8E\n:10009000CFEFD0E1DEBFCDBF0E9452000C947400C0\n:1000A0000C940000B89A83E0C09A2FEF32E597E0F5\n:1000B000215030409040E1F700C00000C0982FEF81\n:1000C00032E597E0215030409040E1F700C0000059\n:1000D000815051F72FEF3DE389E4215030408040BB\n:0C00E000E1F700C00000DFCFF894FFCF74\n:00000001FF\n",
+    "programName": "17-Buzzer-C.hex"
+   }
+  },
+  {
+   "id": "bz1",
+   "kind": "buzzer",
+   "x": 99.0,
+   "y": 84.0,
+   "rotation": 0,
+   "flipH": false,
+   "flipV": false,
+   "props": {}
+  }
+ ],
+ "wires": [
+  {
+   "id": "w1",
+   "from": {
+    "type": "pin",
+    "part": "dev1",
+    "pin": "GND.2"
+   },
+   "to": {
+    "type": "hole",
+    "hole": "bn1"
+   },
+   "color": "#262626",
+   "points": [
+    {
+     "x": -70.0,
+     "y": 226.0
+    },
+    {
+     "x": 34.0,
+     "y": 226.0
+    }
+   ],
+   "curved": false
+  },
+  {
+   "id": "w3",
+   "from": {
+    "type": "pin",
+    "part": "dev1",
+    "pin": "PB0"
+   },
+   "to": {
+    "type": "hole",
+    "hole": "a10"
+   },
+   "color": "#f07c16",
+   "points": [
+    {
+     "x": -290.0,
+     "y": -12.0
+    },
+    {
+     "x": 114.0,
+     "y": -12.0
+    }
+   ],
+   "curved": false
+  },
+  {
+   "id": "w4",
+   "from": {
+    "type": "hole",
+    "hole": "j10"
+   },
+   "to": {
+    "type": "hole",
+    "hole": "bn8"
+   },
+   "color": "#262626",
+   "points": [],
+   "curved": false
+  }
+ ]
+}

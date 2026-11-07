@@ -28,21 +28,6 @@
  ],
  "wires": [
   {
-   "id": "w1",
-   "from": {
-    "type": "pin",
-    "part": "nano1",
-    "pin": "5V"
-   },
-   "to": {
-    "type": "hole",
-    "hole": "bp1"
-   },
-   "color": "#d62f2f",
-   "points": [],
-   "curved": false
-  },
-  {
    "id": "w2",
    "from": {
     "type": "pin",
@@ -54,7 +39,16 @@
     "hole": "bn1"
    },
    "color": "#262626",
-   "points": [],
+   "points": [
+    {
+     "x": -110.0,
+     "y": 226.0
+    },
+    {
+     "x": 34.0,
+     "y": 226.0
+    }
+   ],
    "curved": false
   },
   {
@@ -69,7 +63,16 @@
     "hole": "a10"
    },
    "color": "#f07c16",
-   "points": [],
+   "points": [
+    {
+     "x": -200.0,
+     "y": -12.0
+    },
+    {
+     "x": 114.0,
+     "y": -12.0
+    }
+   ],
    "curved": false
   },
   {

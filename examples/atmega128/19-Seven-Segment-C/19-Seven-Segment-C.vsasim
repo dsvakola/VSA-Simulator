@@ -1,0 +1,274 @@
+{
+ "format": 2,
+ "breadboard": "half",
+ "parts": [
+  {
+   "id": "dev1",
+   "kind": "dev-atmega128",
+   "x": -390.0,
+   "y": 70,
+   "rotation": 0,
+   "flipH": false,
+   "flipV": false,
+   "props": {
+    "mhz": "16",
+    "program": ":100000000C9446000C945D000C945D000C945D0013\n:100010000C945D000C945D000C945D000C945D00EC\n:100020000C945D000C945D000C945D000C945D00DC\n:100030000C945D000C945D000C945D000C945D00CC\n:100040000C945D000C945D000C945D000C945D00BC\n:100050000C945D000C945D000C945D000C945D00AC\n:100060000C945D000C945D000C945D000C945D009C\n:100070000C945D000C945D000C945D000C945D008C\n:100080000C945D000C945D000C945D0011241FBE67\n:10009000CFEFD0E1DEBFCDBF11E0A0E0B1E0E2EFF5\n:1000A000F0E000E00BBF02C007900D92AA30B1074C\n:1000B000D9F70E945F000C9477000C9400008AB37B\n:1000C0008F678ABBE0E0F1E08BB391918078892B58\n:1000D0008BBB2FEF83ED90E3215080409040E1F700\n:1000E00000C0000021E0EA30F20771F7EBCFF8948E\n:0200F000FFCF40\n:0A00F2003F065B4F666D7D077F6FD0\n:00000001FF\n",
+    "programName": "19-Seven-Segment-C.hex"
+   }
+  },
+  {
+   "id": "seg1",
+   "kind": "seven-segment",
+   "x": 84.0,
+   "y": 64.0,
+   "rotation": 0,
+   "flipH": false,
+   "flipV": false,
+   "props": {}
+  },
+  {
+   "id": "r1",
+   "kind": "resistor",
+   "x": 114.0,
+   "y": 139.0,
+   "rotation": 0,
+   "flipH": false,
+   "flipV": false,
+   "props": {
+    "ohms": "330"
+   }
+  }
+ ],
+ "wires": [
+  {
+   "id": "w1",
+   "from": {
+    "type": "pin",
+    "part": "dev1",
+    "pin": "GND.2"
+   },
+   "to": {
+    "type": "hole",
+    "hole": "bn1"
+   },
+   "color": "#262626",
+   "points": [
+    {
+     "x": -70.0,
+     "y": 238.0
+    },
+    {
+     "x": 34.0,
+     "y": 238.0
+    }
+   ],
+   "curved": false
+  },
+  {
+   "id": "w3",
+   "from": {
+    "type": "pin",
+    "part": "dev1",
+    "pin": "PA0"
+   },
+   "to": {
+    "type": "hole",
+    "hole": "a11"
+   },
+   "color": "#f07c16",
+   "points": [
+    {
+     "x": -370.0,
+     "y": -42.0
+    },
+    {
+     "x": 124.0,
+     "y": -42.0
+    }
+   ],
+   "curved": false
+  },
+  {
+   "id": "w4",
+   "from": {
+    "type": "pin",
+    "part": "dev1",
+    "pin": "PA1"
+   },
+   "to": {
+    "type": "hole",
+    "hole": "a12"
+   },
+   "color": "#2f9e44",
+   "points": [
+    {
+     "x": -360.0,
+     "y": -48.0
+    },
+    {
+     "x": 134.0,
+     "y": -48.0
+    }
+   ],
+   "curved": false
+  },
+  {
+   "id": "w5",
+   "from": {
+    "type": "pin",
+    "part": "dev1",
+    "pin": "PA2"
+   },
+   "to": {
+    "type": "hole",
+    "hole": "j11"
+   },
+   "color": "#1c7ed6",
+   "points": [
+    {
+     "x": -350.0,
+     "y": -24.0
+    },
+    {
+     "x": -8.0,
+     "y": -24.0
+    },
+    {
+     "x": -8.0,
+     "y": 232.0
+    },
+    {
+     "x": 124.0,
+     "y": 232.0
+    }
+   ],
+   "curved": false
+  },
+  {
+   "id": "w6",
+   "from": {
+    "type": "pin",
+    "part": "dev1",
+    "pin": "PA3"
+   },
+   "to": {
+    "type": "hole",
+    "hole": "j9"
+   },
+   "color": "#7048e8",
+   "points": [
+    {
+     "x": -340.0,
+     "y": -18.0
+    },
+    {
+     "x": -13.0,
+     "y": -18.0
+    },
+    {
+     "x": -13.0,
+     "y": 226.0
+    },
+    {
+     "x": 104.0,
+     "y": 226.0
+    }
+   ],
+   "curved": false
+  },
+  {
+   "id": "w7",
+   "from": {
+    "type": "pin",
+    "part": "dev1",
+    "pin": "PA4"
+   },
+   "to": {
+    "type": "hole",
+    "hole": "j8"
+   },
+   "color": "#f5c400",
+   "points": [
+    {
+     "x": -330.0,
+     "y": -12.0
+    },
+    {
+     "x": -18.0,
+     "y": -12.0
+    },
+    {
+     "x": -18.0,
+     "y": 244.0
+    },
+    {
+     "x": 94.0,
+     "y": 244.0
+    }
+   ],
+   "curved": false
+  },
+  {
+   "id": "w8",
+   "from": {
+    "type": "pin",
+    "part": "dev1",
+    "pin": "PA5"
+   },
+   "to": {
+    "type": "hole",
+    "hole": "a9"
+   },
+   "color": "#8d5524",
+   "points": [
+    {
+     "x": -320.0,
+     "y": -36.0
+    },
+    {
+     "x": 104.0,
+     "y": -36.0
+    }
+   ],
+   "curved": false
+  },
+  {
+   "id": "w9",
+   "from": {
+    "type": "pin",
+    "part": "dev1",
+    "pin": "PA6"
+   },
+   "to": {
+    "type": "hole",
+    "hole": "a8"
+   },
+   "color": "#868e96",
+   "points": [
+    {
+     "x": -310.0,
+     "y": -30.0
+    },
+    {
+     "x": 94.0,
+     "y": -30.0
+    }
+   ],
+   "curved": false
+  },
+  {
+   "id": "w10",
+   "from": {
+    "type": "hole",
+    "hole": "j14"
+   },
+   "to": {
+    "type": "hole",
+    "hole": "bn11"
+   },
+   "color": "#262626",
+   "points": [],
+   "curved": false
+  }
+ ]
+}

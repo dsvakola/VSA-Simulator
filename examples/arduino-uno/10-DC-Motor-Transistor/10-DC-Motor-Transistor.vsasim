@@ -51,7 +51,7 @@
    "id": "m1",
    "kind": "dc-motor",
    "x": 180,
-   "y": -90,
+   "y": -110.0,
    "rotation": 0,
    "flipH": false,
    "flipV": false,
@@ -61,7 +61,7 @@
    "id": "bat1",
    "kind": "battery-9v",
    "x": 300,
-   "y": -110,
+   "y": -150.0,
    "rotation": 0,
    "flipH": false,
    "flipV": false,
@@ -69,21 +69,6 @@
   }
  ],
  "wires": [
-  {
-   "id": "w1",
-   "from": {
-    "type": "pin",
-    "part": "uno1",
-    "pin": "5V"
-   },
-   "to": {
-    "type": "hole",
-    "hole": "bp1"
-   },
-   "color": "#d62f2f",
-   "points": [],
-   "curved": false
-  },
   {
    "id": "w2",
    "from": {
@@ -96,7 +81,16 @@
     "hole": "bn1"
    },
    "color": "#262626",
-   "points": [],
+   "points": [
+    {
+     "x": -136.0,
+     "y": 264.0
+    },
+    {
+     "x": 34.0,
+     "y": 264.0
+    }
+   ],
    "curved": false
   },
   {
@@ -111,7 +105,24 @@
     "hole": "j11"
    },
    "color": "#f07c16",
-   "points": [],
+   "points": [
+    {
+     "x": -144.0,
+     "y": -180.0
+    },
+    {
+     "x": 358.0,
+     "y": -180.0
+    },
+    {
+     "x": 358.0,
+     "y": 258.0
+    },
+    {
+     "x": 124.0,
+     "y": 258.0
+    }
+   ],
    "curved": false
   },
   {
@@ -138,7 +149,7 @@
     "type": "hole",
     "hole": "f16"
    },
-   "color": "#8c8c8c",
+   "color": "#2f9e44",
    "points": [],
    "curved": false
   },
@@ -154,7 +165,16 @@
     "hole": "a20"
    },
    "color": "#d62f2f",
-   "points": [],
+   "points": [
+    {
+     "x": 320.0,
+     "y": -174.0
+    },
+    {
+     "x": 214.0,
+     "y": -174.0
+    }
+   ],
    "curved": false
   },
   {
@@ -169,7 +189,16 @@
     "hole": "b20"
    },
    "color": "#d62f2f",
-   "points": [],
+   "points": [
+    {
+     "x": 190.0,
+     "y": -22.0
+    },
+    {
+     "x": 214.0,
+     "y": -22.0
+    }
+   ],
    "curved": false
   },
   {
@@ -183,8 +212,17 @@
     "type": "hole",
     "hole": "b16"
    },
-   "color": "#1e6fd9",
-   "points": [],
+   "color": "#1c7ed6",
+   "points": [
+    {
+     "x": 210.0,
+     "y": -28.0
+    },
+    {
+     "x": 174.0,
+     "y": -28.0
+    }
+   ],
    "curved": false
   },
   {
@@ -196,10 +234,19 @@
    },
    "to": {
     "type": "hole",
-    "hole": "tn24"
+    "hole": "tn23"
    },
    "color": "#262626",
-   "points": [],
+   "points": [
+    {
+     "x": 340.0,
+     "y": -162.0
+    },
+    {
+     "x": 294.0,
+     "y": -162.0
+    }
+   ],
    "curved": false
   },
   {
@@ -213,7 +260,24 @@
     "hole": "bn24"
    },
    "color": "#262626",
-   "points": [],
+   "points": [
+    {
+     "x": 304.0,
+     "y": -168.0
+    },
+    {
+     "x": 352.0,
+     "y": -168.0
+    },
+    {
+     "x": 352.0,
+     "y": 252.0
+    },
+    {
+     "x": 304.0,
+     "y": 252.0
+    }
+   ],
    "curved": false
   }
  ]

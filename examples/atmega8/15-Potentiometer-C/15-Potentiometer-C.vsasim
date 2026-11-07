@@ -1,0 +1,184 @@
+{
+ "format": 2,
+ "breadboard": "half",
+ "parts": [
+  {
+   "id": "dev1",
+   "kind": "dev-atmega8",
+   "x": -250.0,
+   "y": 70,
+   "rotation": 0,
+   "flipH": false,
+   "flipV": false,
+   "props": {
+    "mhz": "16",
+    "program": ":1000000012C024C023C022C021C020C01FC01EC0F7\n:100010001DC01CC01BC01AC019C018C017C016C014\n:1000200015C014C013C011241FBECFE5D4E0DEBF3D\n:10003000CDBF10E0A0E6B0E0E0E7F2E002C005903E\n:100040000D92AA37B107D9F766D010C1D9CF5D9B01\n:10005000FECF8CB90895CF93DF93EC018991811184\n:1000600003C0DF91CF910895F2DFF8CF8F929F9276\n:10007000AF92BF92EF92FF920F931F93CF93DF93B4\n:10008000CDB7DEB72C970FB6F894DEBF0FBECDBF4D\n:10009000611571058105910511F580E3898301E002\n:1000A00010E001501109E1E0F0E0EC0FFD1FE00F5E\n:1000B000F11F8081CCDF0115110599F72C960FB641\n:1000C000F894DEBF0FBECDBFDF91CF911F910F918E\n:1000D000FF90EF90BF90AF909F908F9008959E01FA\n:1000E0002F5F3F4F790110E000E02AE0822E912C33\n:1000F000A12CB12C0F5F1F4FA50194018FD0605D23\n:10010000F70161937F01B901CA016115710581058C\n:10011000910581F7C6CF10BC87E689B988E18AB915\n:1001200086E880BD80E487B987E886B910E484E674\n:10013000C82ED12CE12CF12C17B9369A3699FECF66\n:10014000C4B1D5B19E01A8E8B3E184D02B013C0134\n:100150002FEF33E040E050E03FD049015A0180E604\n:1001600090E079DFBE0190E080E080DF88E690E0FB\n:1001700072DFC301B20128E13CE94FE050E02CD02E\n:10018000CA01B90173DF8EE262DFC501B40128EE56\n:1001900033E040E050E020D0A70196011DD0CA0115\n:1001A000B90164DFC501B401A701960115D02AE0A9\n:1001B00030E040E050E010D0CA01B90157DF85E7D8\n:1001C00090E049DF2FEF89E698E121508040904090\n:1001D000E1F700C00000B0CFA1E21A2EAA1BBB1BA2\n:1001E000FD010DC0AA1FBB1FEE1FFF1FA217B30703\n:1001F000E407F50720F0A21BB30BE40BF50B661F19\n:10020000771F881F991F1A9469F7609570958095DC\n:1002100090959B01AC01BD01CF010895052E97FB80\n:1002200016F400940FD057FD05D0D6DF07FC02D09E\n:1002300046F408C050954095309521953F4F4F4F5B\n:100240005F4F089590958095709561957F4F8F4F82\n:100250009F4F0895A29FB001B39FC001A39F01D0FB\n:10026000B29F700D811D1124911D0895F894FFCF48\n:1002700056616C75653A2000202020566F6C7461C1\n:0A02800067653A200020560D0A00C1\n:00000001FF\n",
+    "programName": "15-Potentiometer-C.hex"
+   }
+  },
+  {
+   "id": "pot1",
+   "kind": "potentiometer",
+   "x": 104.0,
+   "y": 54.0,
+   "rotation": 0,
+   "flipH": false,
+   "flipV": false,
+   "props": {
+    "ohms": "10000"
+   }
+  }
+ ],
+ "wires": [
+  {
+   "id": "w1",
+   "from": {
+    "type": "pin",
+    "part": "dev1",
+    "pin": "GND.2"
+   },
+   "to": {
+    "type": "hole",
+    "hole": "bn2"
+   },
+   "color": "#262626",
+   "points": [
+    {
+     "x": -160.0,
+     "y": 238.0
+    },
+    {
+     "x": 44.0,
+     "y": 238.0
+    }
+   ],
+   "curved": false
+  },
+  {
+   "id": "w2",
+   "from": {
+    "type": "pin",
+    "part": "dev1",
+    "pin": "5V"
+   },
+   "to": {
+    "type": "hole",
+    "hole": "bp1"
+   },
+   "color": "#d62f2f",
+   "points": [
+    {
+     "x": -90.0,
+     "y": -18.0
+    },
+    {
+     "x": -13.0,
+     "y": -18.0
+    },
+    {
+     "x": -13.0,
+     "y": 232.0
+    },
+    {
+     "x": 34.0,
+     "y": 232.0
+    }
+   ],
+   "curved": false
+  },
+  {
+   "id": "w3",
+   "from": {
+    "type": "hole",
+    "hole": "a10"
+   },
+   "to": {
+    "type": "hole",
+    "hole": "bp8"
+   },
+   "color": "#d62f2f",
+   "points": [
+    {
+     "x": 114.0,
+     "y": -12.0
+    },
+    {
+     "x": -8.0,
+     "y": -12.0
+    },
+    {
+     "x": -8.0,
+     "y": 226.0
+    },
+    {
+     "x": 114.0,
+     "y": 226.0
+    }
+   ],
+   "curved": false
+  },
+  {
+   "id": "w4",
+   "from": {
+    "type": "hole",
+    "hole": "a11"
+   },
+   "to": {
+    "type": "pin",
+    "part": "dev1",
+    "pin": "PC0"
+   },
+   "color": "#f07c16",
+   "points": [
+    {
+     "x": 124.0,
+     "y": -24.0
+    },
+    {
+     "x": -18.0,
+     "y": -24.0
+    },
+    {
+     "x": -18.0,
+     "y": 250.0
+    },
+    {
+     "x": -230.0,
+     "y": 250.0
+    }
+   ],
+   "curved": false
+  },
+  {
+   "id": "w5",
+   "from": {
+    "type": "hole",
+    "hole": "a12"
+   },
+   "to": {
+    "type": "hole",
+    "hole": "bn10"
+   },
+   "color": "#262626",
+   "points": [
+    {
+     "x": 134.0,
+     "y": -30.0
+    },
+    {
+     "x": -23.0,
+     "y": -30.0
+    },
+    {
+     "x": -23.0,
+     "y": 244.0
+    },
+    {
+     "x": 134.0,
+     "y": 244.0
+    }
+   ],
+   "curved": false
+  }
+ ]
+}
