@@ -8,11 +8,13 @@
   The circuit:
   - PB3 -> 220 ohm resistor -> LED anode, LED cathode -> GND
 
+  The program also prints messages in the Serial Monitor, to show how a program can print text.
+
   You can modify this code and save it with another file name to simulate in
   VSA Simulator.
 
-  Modified 03 November 2026 by Prof. Dattaraj S. Vidyasagar
-  Modified 04 November 2026 by Prof. Yash D. Vidyasagar
+  Written on 10 October 2026 by Prof. Dattaraj S. Vidyasagar
+  Modified on 07 November 2026 by Prof. Yash D. Vidyasagar
 
   This example code is in the public domain.
   For a great collection of example codes to simulate on VSA Simulator,
@@ -27,6 +29,7 @@ int step = 5;               // how much to change each time
 
 void setup() {
   pinMode(ledPin, OUTPUT);
+  Serial.begin(9600);         // open the serial port so the program can print messages
 }
 
 void loop() {
@@ -36,6 +39,9 @@ void loop() {
   // Turn around at the ends: 0 is off, 255 is fully on.
   if (brightness <= 0 || brightness >= 255) {
     step = -step;
+    Serial.print("Brightness ");   // print a line in the Serial Monitor
+    Serial.print(brightness);
+    Serial.println(step > 0 ? ": getting brighter" : ": getting dimmer");
   }
   delay(30);
 }

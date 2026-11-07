@@ -14,11 +14,13 @@
   - External LED: D6 (GPIO12) -> 220 ohm resistor -> LED anode (long leg)
   - LED cathode (short leg) -> GND
 
+  The program also prints messages in the Shell, to show how a program can print text.
+
   You can modify this code and save it with another file name to simulate in
   VSA Simulator.
 
-  Modified 03 November 2026 by Prof. Dattaraj S. Vidyasagar
-  Modified 04 November 2026 by Prof. Yash D. Vidyasagar
+  Written on 10 October 2026 by Prof. Dattaraj S. Vidyasagar
+  Modified on 01 November 2026 by Prof. Yash D. Vidyasagar
 
   This example code is in the public domain.
   For a great collection of example codes to simulate on VSA Simulator,
@@ -36,7 +38,9 @@ led_ext = Pin(12, Pin.OUT)   # the external LED on D6
 while True:
     led.value(0)        # LOW: the on-board LED turns on
     led_ext.value(1)    # HIGH: the external LED turns on
+    print("LED on")     # print a message in the Shell
     time.sleep(1)       # wait for one second
     led.value(1)        # HIGH: the on-board LED turns off
     led_ext.value(0)    # LOW: the external LED turns off
+    print("LED off")
     time.sleep(1)       # wait for one second again

@@ -12,11 +12,13 @@
   - Blue: D27 (GPIO27) -> 220 ohm resistor -> B leg
   - Common cathode (longest leg) -> GND
 
+  The program also prints messages in the Shell, to show how a program can print text.
+
   You can modify this code and save it with another file name to simulate in
   VSA Simulator.
 
-  Modified 03 November 2026 by Prof. Dattaraj S. Vidyasagar
-  Modified 04 November 2026 by Prof. Yash D. Vidyasagar
+  Written on 24 September 2026 by Prof. Dattaraj S. Vidyasagar
+  Modified on 23 October 2026 by Prof. Yash D. Vidyasagar
 
   This example code is in the public domain.
   For a great collection of example codes to simulate on VSA Simulator,
@@ -41,10 +43,17 @@ def set_colour(r, g, b):
     blue.duty_u16(b * 257)
 
 while True:
+    print("Colour: red")
     set_colour(255, 0, 0);     time.sleep(1)   # red
+    print("Colour: green")
     set_colour(0, 255, 0);     time.sleep(1)   # green
+    print("Colour: blue")
     set_colour(0, 0, 255);     time.sleep(1)   # blue
+    print("Colour: yellow")
     set_colour(255, 255, 0);   time.sleep(1)   # yellow
+    print("Colour: cyan")
     set_colour(0, 255, 255);   time.sleep(1)   # cyan
+    print("Colour: magenta")
     set_colour(255, 0, 255);   time.sleep(1)   # magenta
+    print("Colour: white")
     set_colour(255, 255, 255); time.sleep(1)   # white

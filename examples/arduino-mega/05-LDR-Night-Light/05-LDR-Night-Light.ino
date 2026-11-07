@@ -15,8 +15,8 @@
   You can modify this code and save it with another file name to simulate in
   VSA Simulator.
 
-  Modified 03 November 2026 by Prof. Dattaraj S. Vidyasagar
-  Modified 04 November 2026 by Prof. Yash D. Vidyasagar
+  Written on 08 October 2026 by Prof. Dattaraj S. Vidyasagar
+  Modified on 30 October 2026 by Prof. Yash D. Vidyasagar
 
   This example code is in the public domain.
   For a great collection of example codes to simulate on VSA Simulator,

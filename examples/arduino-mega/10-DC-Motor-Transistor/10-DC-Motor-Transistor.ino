@@ -15,11 +15,13 @@
   - Diode across the motor: cathode (striped end) to battery +, anode to collector
   - 9 V battery - -> GND of the board (common ground)
 
+  The program also prints messages in the Serial Monitor, to show how a program can print text.
+
   You can modify this code and save it with another file name to simulate in
   VSA Simulator.
 
-  Modified 03 November 2026 by Prof. Dattaraj S. Vidyasagar
-  Modified 04 November 2026 by Prof. Yash D. Vidyasagar
+  Written on 27 September 2026 by Prof. Dattaraj S. Vidyasagar
+  Modified on 07 November 2026 by Prof. Yash D. Vidyasagar
 
   This example code is in the public domain.
   For a great collection of example codes to simulate on VSA Simulator,

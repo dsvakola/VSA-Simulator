@@ -11,11 +11,13 @@
   - DS -> pin 11, STCP (latch) -> pin 8, SHCP (clock) -> pin 12
   - Q0 to Q7 -> 220 ohm resistor -> LED anode; each LED cathode -> GND
 
+  The program also prints messages in the Serial Monitor, to show how a program can print text.
+
   You can modify this code and save it with another file name to simulate in
   VSA Simulator.
 
-  Modified 03 November 2026 by Prof. Dattaraj S. Vidyasagar
-  Modified 04 November 2026 by Prof. Yash D. Vidyasagar
+  Written on 29 September 2026 by Prof. Dattaraj S. Vidyasagar
+  Modified on 18 October 2026 by Prof. Yash D. Vidyasagar
 
   This example code is in the public domain.
   For a great collection of example codes to simulate on VSA Simulator,
@@ -39,17 +41,24 @@ void setup() {
   pinMode(dataPin, OUTPUT);
   pinMode(latchPin, OUTPUT);
   pinMode(clockPin, OUTPUT);
+  Serial.begin(9600);   // open the serial port so the program can print messages
 }
 
 void loop() {
   // A light that runs from Q0 to Q7...
   for (int i = 0; i < 8; i++) {
     writeLeds(1 << i);
+    Serial.print("LED Q");   // print which LED is on in the Serial Monitor
+    Serial.print(i);
+    Serial.println(" is on");
     delay(200);
   }
   // ...and back again.
   for (int i = 6; i > 0; i--) {
     writeLeds(1 << i);
+    Serial.print("LED Q");   // print which LED is on in the Serial Monitor
+    Serial.print(i);
+    Serial.println(" is on");
     delay(200);
   }
 }

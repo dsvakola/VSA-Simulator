@@ -12,11 +12,13 @@
   - LCD GND -> GND, VCC -> 5V
   - LCD SDA -> A4, SCL -> A5 (or the SDA and SCL pins beside AREF)
 
+  The program also prints messages in the Serial Monitor, to show how a program can print text.
+
   You can modify this code and save it with another file name to simulate in
   VSA Simulator.
 
-  Modified 03 November 2026 by Prof. Dattaraj S. Vidyasagar
-  Modified 04 November 2026 by Prof. Yash D. Vidyasagar
+  Written on 02 October 2026 by Prof. Dattaraj S. Vidyasagar
+  Modified on 06 November 2026 by Prof. Yash D. Vidyasagar
 
   This example code is in the public domain.
   For a great collection of example codes to simulate on VSA Simulator,
@@ -31,7 +33,10 @@
 // Address 0x27, 16 characters, 2 lines.
 LiquidCrystal_I2C lcd(0x27, 16, 2);
 
+unsigned long lastSeconds = 9999;   // the last value that was printed
+
 void setup() {
+  Serial.begin(9600);   // open the serial port so the program can print messages
   lcd.init();        // start the LCD
   lcd.backlight();   // switch on the backlight
 
@@ -42,7 +47,13 @@ void setup() {
 }
 
 void loop() {
+  unsigned long seconds = millis() / 1000;   // seconds since the program started
   lcd.setCursor(9, 1);           // just after "Seconds: "
-  lcd.print(millis() / 1000);    // seconds since the program started
+  lcd.print(seconds);
+  if (seconds != lastSeconds) {  // print the seconds once, when they change
+    Serial.print("Seconds: ");
+    Serial.println(seconds);
+    lastSeconds = seconds;
+  }
   delay(200);
 }

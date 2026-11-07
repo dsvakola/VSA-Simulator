@@ -14,11 +14,13 @@
   - SDA -> GP4
   - SCL -> GP5
 
+  The program also prints messages in the Shell, to show how a program can print text.
+
   You can modify this code and save it with another file name to simulate in
   VSA Simulator.
 
-  Modified 03 November 2026 by Prof. Dattaraj S. Vidyasagar
-  Modified 04 November 2026 by Prof. Yash D. Vidyasagar
+  Written on 28 September 2026 by Prof. Dattaraj S. Vidyasagar
+  Modified on 30 October 2026 by Prof. Yash D. Vidyasagar
 
   This example code is in the public domain.
   For a great collection of example codes to simulate on VSA Simulator,
@@ -46,4 +48,5 @@ while True:
     ball_x += step_x
     if ball_x < 8 or ball_x > 119:
         step_x = -step_x
+        print("The ball bounced at x =", ball_x)   # print a message in the Shell
     time.sleep_ms(20)

@@ -9,11 +9,13 @@
   - PD2 -> segment A, PD3 -> segment B, PD4 -> segment C, PD5 -> segment D, PD6 -> segment E, PD7 -> segment F, PB0 -> segment G
   - COM -> 330 ohm resistor -> GND
 
+  The program also prints messages in the Serial Monitor, to show how a program can print text.
+
   You can modify this code and save it with another file name to simulate in
   VSA Simulator.
 
-  Modified 03 November 2026 by Prof. Dattaraj S. Vidyasagar
-  Modified 04 November 2026 by Prof. Yash D. Vidyasagar
+  Written on 14 October 2026 by Prof. Dattaraj S. Vidyasagar
+  Modified on 30 October 2026 by Prof. Yash D. Vidyasagar
 
   This example code is in the public domain.
   For a great collection of example codes to simulate on VSA Simulator,
@@ -50,11 +52,14 @@ void setup() {
   for (int s = 0; s < 7; s++) {
     pinMode(segmentPins[s], OUTPUT);
   }
+  Serial.begin(9600);   // open the serial port so the program can print messages
 }
 
 void loop() {
   for (int n = 0; n <= 9; n++) {
     showDigit(n);
+    Serial.print("Digit: ");   // print the digit in the Serial Monitor
+    Serial.println(n);
     delay(1000);
   }
 }

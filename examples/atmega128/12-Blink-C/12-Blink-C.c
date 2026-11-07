@@ -15,11 +15,13 @@
   - Or with avr-gcc: avr-gcc -mmcu=atmega128 -DF_CPU=16000000UL -Os -o main.elf main.c
     then avr-objcopy -O ihex -R .eeprom main.elf main.hex
 
+  The program also prints messages in the Serial Monitor, to show how a program can print text.
+
   You can modify this code and save it with another file name to simulate in
   VSA Simulator.
 
-  Modified 03 November 2026 by Prof. Dattaraj S. Vidyasagar
-  Modified 04 November 2026 by Prof. Yash D. Vidyasagar
+  Written on 23 September 2026 by Prof. Dattaraj S. Vidyasagar
+  Modified on 23 October 2026 by Prof. Yash D. Vidyasagar
 
   This example code is in the public domain.
   For a great collection of example codes to simulate on VSA Simulator,
@@ -34,15 +36,52 @@
 #include <avr/io.h>
 #include <util/delay.h>
 
+// ---- serial port (UART): 9600 baud -------------------------------------
+#define BAUD_REG ((F_CPU / 16 / 9600) - 1)      // 103 for 16 MHz
+
+static void uart_init(void)
+{
+    UBRR0H = (uint8_t)(BAUD_REG >> 8);
+    UBRR0L = (uint8_t)BAUD_REG;
+    UCSR0B = (1 << RXEN0) | (1 << TXEN0);      // switch the receiver and transmitter on
+    UCSR0C = (1 << UCSZ01) | (1 << UCSZ00);               // 8 data bits, no parity, 1 stop bit
+}
+
+static void uart_putc(char c)
+{
+    while (!(UCSR0A & (1 << UDRE0)))
+        ;                                         // wait until the transmit register is free
+    UDR0 = c;
+}
+
+__attribute__((unused)) static void uart_puts(const char *s)
+{
+    while (*s)
+        uart_putc(*s++);
+}
+
+__attribute__((unused)) static void uart_putnum(long n)                   // prints a whole number
+{
+    char buf[12];
+    int i = 0;
+    if (n < 0) { uart_putc('-'); n = -n; }
+    if (n == 0) buf[i++] = '0';
+    while (n > 0) { buf[i++] = '0' + (n % 10); n /= 10; }
+    while (i > 0) uart_putc(buf[--i]);
+}
+
 int main(void)
 {
     DDRB |= (1 << PB0);          // make PB0 an output
+    uart_init();                            // start the serial port so the program can print
 
     while (1)
     {
         PORTB |= (1 << PB0);     // LED on
+        uart_puts("LED on\r\n");            // print a line in the Serial Monitor
         _delay_ms(1000);                    // wait one second
         PORTB &= ~(1 << PB0);    // LED off
+        uart_puts("LED off\r\n");
         _delay_ms(1000);
     }
 }

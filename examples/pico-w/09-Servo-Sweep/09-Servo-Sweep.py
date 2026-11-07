@@ -13,11 +13,13 @@
   - Servo V+ (red) -> VBUS
   - Servo GND (brown) -> GND
 
+  The program also prints messages in the Shell, to show how a program can print text.
+
   You can modify this code and save it with another file name to simulate in
   VSA Simulator.
 
-  Modified 03 November 2026 by Prof. Dattaraj S. Vidyasagar
-  Modified 04 November 2026 by Prof. Yash D. Vidyasagar
+  Written on 05 October 2026 by Prof. Dattaraj S. Vidyasagar
+  Modified on 04 November 2026 by Prof. Yash D. Vidyasagar
 
   This example code is in the public domain.
   For a great collection of example codes to simulate on VSA Simulator,
@@ -40,7 +42,11 @@ def set_angle(angle):
 while True:
     for angle in range(0, 181):        # 0 to 180 degrees, one at a time
         set_angle(angle)
+        if angle % 10 == 0:              # print every 10 degrees
+            print("Servo angle:", angle, "degrees")
         time.sleep_ms(15)              # give the arm time to get there
     for angle in range(180, -1, -1):   # and back again
         set_angle(angle)
+        if angle % 10 == 0:              # print every 10 degrees
+            print("Servo angle:", angle, "degrees")
         time.sleep_ms(15)

@@ -12,11 +12,13 @@
   - DHT11 VCC -> 5V, GND -> GND
   - DHT11 DATA -> pin 2
 
+  The program also prints messages in the Serial Monitor, to show how a program can print text.
+
   You can modify this code and save it with another file name to simulate in
   VSA Simulator.
 
-  Modified 03 November 2026 by Prof. Dattaraj S. Vidyasagar
-  Modified 04 November 2026 by Prof. Yash D. Vidyasagar
+  Written on 26 September 2026 by Prof. Dattaraj S. Vidyasagar
+  Modified on 05 November 2026 by Prof. Yash D. Vidyasagar
 
   This example code is in the public domain.
   For a great collection of example codes to simulate on VSA Simulator,

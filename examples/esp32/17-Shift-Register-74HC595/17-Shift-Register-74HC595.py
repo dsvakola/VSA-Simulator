@@ -16,11 +16,13 @@
   - VCC and MR -> 3V3; GND and OE -> GND
   - Q0 to Q7 -> 220 ohm resistor -> LED -> GND (8 times)
 
+  The program also prints messages in the Shell, to show how a program can print text.
+
   You can modify this code and save it with another file name to simulate in
   VSA Simulator.
 
-  Modified 03 November 2026 by Prof. Dattaraj S. Vidyasagar
-  Modified 04 November 2026 by Prof. Yash D. Vidyasagar
+  Written on 23 September 2026 by Prof. Dattaraj S. Vidyasagar
+  Modified on 28 October 2026 by Prof. Yash D. Vidyasagar
 
   This example code is in the public domain.
   For a great collection of example codes to simulate on VSA Simulator,
@@ -48,7 +50,9 @@ def write_leds(pattern):
 while True:
     for i in range(8):          # from Q0 to Q7...
         write_leds(1 << i)
+        print("LED Q" + str(i) + " is on")   # print which LED is on in the Shell
         time.sleep_ms(200)
     for i in range(6, 0, -1):   # ...and back again
         write_leds(1 << i)
+        print("LED Q" + str(i) + " is on")   # print which LED is on in the Shell
         time.sleep_ms(200)

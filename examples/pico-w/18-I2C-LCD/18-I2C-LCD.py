@@ -14,11 +14,13 @@
   - SDA -> GP4
   - SCL -> GP5
 
+  The program also prints messages in the Shell, to show how a program can print text.
+
   You can modify this code and save it with another file name to simulate in
   VSA Simulator.
 
-  Modified 03 November 2026 by Prof. Dattaraj S. Vidyasagar
-  Modified 04 November 2026 by Prof. Yash D. Vidyasagar
+  Written on 29 September 2026 by Prof. Dattaraj S. Vidyasagar
+  Modified on 31 October 2026 by Prof. Yash D. Vidyasagar
 
   This example code is in the public domain.
   For a great collection of example codes to simulate on VSA Simulator,
@@ -40,9 +42,13 @@ lcd.putstr("VSA Simulator")
 lcd.move_to(0, 1)        # column 0, line 1 (the bottom line)
 lcd.putstr("Seconds: ")
 start = time.ticks_ms()
+last_seconds = -1   # the last value that was printed
 
 while True:
     seconds = time.ticks_diff(time.ticks_ms(), start) // 1000
+    if seconds != last_seconds:       # print the seconds once, when they change
+        print("Seconds:", seconds)
+        last_seconds = seconds
     lcd.move_to(9, 1)    # just after "Seconds: "
     lcd.putstr(str(seconds))
     time.sleep_ms(200)
