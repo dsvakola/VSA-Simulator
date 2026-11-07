@@ -1,0 +1,304 @@
+{
+ "format": 2,
+ "breadboard": "full",
+ "parts": [
+  {
+   "id": "dev1",
+   "kind": "dev-8051",
+   "x": -270.0,
+   "y": 70,
+   "rotation": 0,
+   "flipH": false,
+   "flipV": false,
+   "props": {
+    "chip": "at89s52",
+    "mhz": "11.0592",
+    "program": ":0600000002000902006885\n:0600620075080002000613\n:0300060002008B6A\n:10006800C0E0C007C0D075D000AF080F740F5FF5AF\n:1000780008E508F4FF740F5F44F0F590D0D0D0077E\n:0E008800D0E0327590FFD288D2A8D2AF80FEB1\n:06003800E478FFF6D8FD9C\n:100016007900E94400601B7A0090009A780175A087\n:1000260000E493F2A308B8000205A0D9F4DAF27549\n:02003600A0FF29\n:10003E007800E84400600A790175A000E4F309D85D\n:10004E00FC7800E84400600C7900900001E4F0A315\n:04005E00D8FCD9FAF7\n:0D000900758108120096E582600302000672\n:04009600758200224D\n:00000001FF\n",
+    "programName": "11-External-Interrupt.hex"
+   }
+  },
+  {
+   "id": "r1",
+   "kind": "resistor",
+   "x": 44.0,
+   "y": 139.0,
+   "rotation": 0,
+   "flipH": false,
+   "flipV": false,
+   "props": {
+    "ohms": "220"
+   }
+  },
+  {
+   "id": "led1",
+   "kind": "led",
+   "x": 79.0,
+   "y": 84.0,
+   "rotation": 0,
+   "flipH": false,
+   "flipV": false,
+   "props": {
+    "color": "red"
+   }
+  },
+  {
+   "id": "r2",
+   "kind": "resistor",
+   "x": 114.0,
+   "y": 139.0,
+   "rotation": 0,
+   "flipH": false,
+   "flipV": false,
+   "props": {
+    "ohms": "220"
+   }
+  },
+  {
+   "id": "led2",
+   "kind": "led",
+   "x": 149.0,
+   "y": 84.0,
+   "rotation": 0,
+   "flipH": false,
+   "flipV": false,
+   "props": {
+    "color": "red"
+   }
+  },
+  {
+   "id": "r3",
+   "kind": "resistor",
+   "x": 184.0,
+   "y": 139.0,
+   "rotation": 0,
+   "flipH": false,
+   "flipV": false,
+   "props": {
+    "ohms": "220"
+   }
+  },
+  {
+   "id": "led3",
+   "kind": "led",
+   "x": 219.0,
+   "y": 84.0,
+   "rotation": 0,
+   "flipH": false,
+   "flipV": false,
+   "props": {
+    "color": "red"
+   }
+  },
+  {
+   "id": "r4",
+   "kind": "resistor",
+   "x": 254.0,
+   "y": 139.0,
+   "rotation": 0,
+   "flipH": false,
+   "flipV": false,
+   "props": {
+    "ohms": "220"
+   }
+  },
+  {
+   "id": "led4",
+   "kind": "led",
+   "x": 289.0,
+   "y": 84.0,
+   "rotation": 0,
+   "flipH": false,
+   "flipV": false,
+   "props": {
+    "color": "red"
+   }
+  },
+  {
+   "id": "btn1",
+   "kind": "push-button-2pin",
+   "x": 399.0,
+   "y": 84.0,
+   "rotation": 0,
+   "flipH": false,
+   "flipV": false,
+   "props": {}
+  }
+ ],
+ "wires": [
+  {
+   "id": "w1",
+   "from": {
+    "type": "pin",
+    "part": "dev1",
+    "pin": "GND.2"
+   },
+   "to": {
+    "type": "hole",
+    "hole": "bn1"
+   },
+   "color": "#262626",
+   "points": [],
+   "curved": false
+  },
+  {
+   "id": "w2",
+   "from": {
+    "type": "pin",
+    "part": "dev1",
+    "pin": "5V"
+   },
+   "to": {
+    "type": "hole",
+    "hole": "bp1"
+   },
+   "color": "#d62f2f",
+   "points": [],
+   "curved": false
+  },
+  {
+   "id": "w3",
+   "from": {
+    "type": "hole",
+    "hole": "bp2"
+   },
+   "to": {
+    "type": "hole",
+    "hole": "j3"
+   },
+   "color": "#d62f2f",
+   "points": [],
+   "curved": false
+  },
+  {
+   "id": "w4",
+   "from": {
+    "type": "pin",
+    "part": "dev1",
+    "pin": "P1.0"
+   },
+   "to": {
+    "type": "hole",
+    "hole": "j8"
+   },
+   "color": "#f5c400",
+   "points": [],
+   "curved": false
+  },
+  {
+   "id": "w5",
+   "from": {
+    "type": "hole",
+    "hole": "bp8"
+   },
+   "to": {
+    "type": "hole",
+    "hole": "j10"
+   },
+   "color": "#d62f2f",
+   "points": [],
+   "curved": false
+  },
+  {
+   "id": "w6",
+   "from": {
+    "type": "pin",
+    "part": "dev1",
+    "pin": "P1.1"
+   },
+   "to": {
+    "type": "hole",
+    "hole": "j15"
+   },
+   "color": "#f5c400",
+   "points": [],
+   "curved": false
+  },
+  {
+   "id": "w7",
+   "from": {
+    "type": "hole",
+    "hole": "bp14"
+   },
+   "to": {
+    "type": "hole",
+    "hole": "j17"
+   },
+   "color": "#d62f2f",
+   "points": [],
+   "curved": false
+  },
+  {
+   "id": "w8",
+   "from": {
+    "type": "pin",
+    "part": "dev1",
+    "pin": "P1.2"
+   },
+   "to": {
+    "type": "hole",
+    "hole": "j22"
+   },
+   "color": "#f5c400",
+   "points": [],
+   "curved": false
+  },
+  {
+   "id": "w9",
+   "from": {
+    "type": "hole",
+    "hole": "bp20"
+   },
+   "to": {
+    "type": "hole",
+    "hole": "j24"
+   },
+   "color": "#d62f2f",
+   "points": [],
+   "curved": false
+  },
+  {
+   "id": "w10",
+   "from": {
+    "type": "pin",
+    "part": "dev1",
+    "pin": "P1.3"
+   },
+   "to": {
+    "type": "hole",
+    "hole": "j29"
+   },
+   "color": "#f5c400",
+   "points": [],
+   "curved": false
+  },
+  {
+   "id": "w11",
+   "from": {
+    "type": "pin",
+    "part": "dev1",
+    "pin": "P3.2"
+   },
+   "to": {
+    "type": "hole",
+    "hole": "a40"
+   },
+   "color": "#f07c16",
+   "points": [],
+   "curved": false
+  },
+  {
+   "id": "w12",
+   "from": {
+    "type": "hole",
+    "hole": "j40"
+   },
+   "to": {
+    "type": "hole",
+    "hole": "bn33"
+   },
+   "color": "#262626",
+   "points": [],
+   "curved": false
+  }
+ ]
+}

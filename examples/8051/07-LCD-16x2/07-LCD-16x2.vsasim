@@ -1,0 +1,249 @@
+{
+ "format": 2,
+ "breadboard": "half",
+ "parts": [
+  {
+   "id": "dev1",
+   "kind": "dev-8051",
+   "x": -270.0,
+   "y": 70,
+   "rotation": 0,
+   "flipH": false,
+   "flipV": false,
+   "props": {
+    "chip": "at89s52",
+    "mhz": "11.0592",
+    "program": ":03000000020006F5\n:03005F0002000399\n:03000300020140B7\n:10006200AE82AF838E048F051EBEFF011FEC4D6072\n:1000720019E58954F04401F589758CFC758A66D2BC\n:100082008C308DFDC28CC28D80DA22AF82E5A05405\n:10009200C3FE53070FEF2F25E04EF5A0D2A190002B\n:1000A20001120062C2A1900001020062AF82E50863\n:1000B20024FF92A0EFC4540FF582C00712008DD026\n:1000C200078F8202008D900032120062C2A07582F8\n:1000D2000312008D75820312008D75820312008D4A\n:1000E20075820212008D7508007582281200AE75A5\n:1000F200080075820C1200AE7508007582061200A7\n:10010200AE7508007582011200AE90000202006214\n:10011200AD82AE83AFF08D828E838FF0120277FCB8\n:10012200601B8C820DBD00010E750801C007C00660\n:10013200C0051200AED005D006D00780D922120029\n:10014200C87508007582801200AE90029775F08023\n:100152001201127E007F007508007582C0C007C0C0\n:10016200061200AE9002A575F080120112D006D0E0\n:1001720007750964750A008E828F83C007C0061254\n:10018200020175090A750A0012022AAC8274302C27\n:10019200F5827508011200AED006D00775090A75FE\n:1001A2000A008E828F83C007C00612020175090AF7\n:1001B200750A0012022AAC8274302CF5827508018D\n:1001C2001200AED006D00775090A750A008E828F1A\n:1001D20083C007C00612022AAC8274302CF58275E5\n:1001E20008011200AED006D0070EBE00010F900328\n:0F01F200E8C007C006120062D006D0070201590C\n:100297005653412053696D756C61746F72005365D5\n:0802A700636F6E64733A2000DE\n:100201007A10E4FBFCE58225E0F582E58333F58392\n:10021100EB33FBEC33FCEB9509F5F0EC950A40066A\n:09022100FCABF0438201DADD229E\n:06003500E478FFF6D8FD9F\n:100013007900E94400601B7A009002AF780175A073\n:1000230000E493F2A308B8000205A0D9F4DAF2754C\n:02003300A0FF2C\n:10022A00E509450A60467A01E50925E0F509E50A86\n:10023A00334012F50AE5829509E583950A40030AD7\n:10024A0080E6C3E50A13F50AE50913F509C3E58251\n:10025A009509F5F0E583950A4005F58385F082C393\n:0D026A00E50A13F50AE50913F509DAE122AA\n:10003B007800E84400600A790175A000E4F309D860\n:10004B00FC7800E84400600C7900900001E4F0A318\n:04005B00D8FCD9FAFA\n:0D00060075810A120293E582600302000377\n:1002770020F71430F6148883A88220F507E6A883B0\n:1002870075830022E280F7E49322E0227582002240\n:00000001FF\n",
+    "programName": "07-LCD-16x2.hex"
+   }
+  },
+  {
+   "id": "lcd1",
+   "kind": "lcd-16x2",
+   "x": 20,
+   "y": -170,
+   "rotation": 0,
+   "flipH": false,
+   "flipV": false,
+   "props": {}
+  }
+ ],
+ "wires": [
+  {
+   "id": "w1",
+   "from": {
+    "type": "pin",
+    "part": "dev1",
+    "pin": "GND.2"
+   },
+   "to": {
+    "type": "hole",
+    "hole": "bn1"
+   },
+   "color": "#262626",
+   "points": [],
+   "curved": false
+  },
+  {
+   "id": "w2",
+   "from": {
+    "type": "pin",
+    "part": "dev1",
+    "pin": "5V"
+   },
+   "to": {
+    "type": "hole",
+    "hole": "bp1"
+   },
+   "color": "#d62f2f",
+   "points": [],
+   "curved": false
+  },
+  {
+   "id": "w3",
+   "from": {
+    "type": "pin",
+    "part": "lcd1",
+    "pin": "VSS"
+   },
+   "to": {
+    "type": "hole",
+    "hole": "bn2"
+   },
+   "color": "#262626",
+   "points": [],
+   "curved": false
+  },
+  {
+   "id": "w4",
+   "from": {
+    "type": "pin",
+    "part": "lcd1",
+    "pin": "K"
+   },
+   "to": {
+    "type": "hole",
+    "hole": "bn4"
+   },
+   "color": "#262626",
+   "points": [],
+   "curved": false
+  },
+  {
+   "id": "w5",
+   "from": {
+    "type": "pin",
+    "part": "lcd1",
+    "pin": "V0"
+   },
+   "to": {
+    "type": "hole",
+    "hole": "bn5"
+   },
+   "color": "#262626",
+   "points": [],
+   "curved": false
+  },
+  {
+   "id": "w6",
+   "from": {
+    "type": "pin",
+    "part": "lcd1",
+    "pin": "RW"
+   },
+   "to": {
+    "type": "hole",
+    "hole": "bn7"
+   },
+   "color": "#262626",
+   "points": [],
+   "curved": false
+  },
+  {
+   "id": "w7",
+   "from": {
+    "type": "pin",
+    "part": "lcd1",
+    "pin": "VDD"
+   },
+   "to": {
+    "type": "hole",
+    "hole": "bp2"
+   },
+   "color": "#d62f2f",
+   "points": [],
+   "curved": false
+  },
+  {
+   "id": "w8",
+   "from": {
+    "type": "pin",
+    "part": "lcd1",
+    "pin": "A"
+   },
+   "to": {
+    "type": "hole",
+    "hole": "bp4"
+   },
+   "color": "#d62f2f",
+   "points": [],
+   "curved": false
+  },
+  {
+   "id": "w9",
+   "from": {
+    "type": "pin",
+    "part": "lcd1",
+    "pin": "RS"
+   },
+   "to": {
+    "type": "pin",
+    "part": "dev1",
+    "pin": "P2.0"
+   },
+   "color": "#f5c400",
+   "points": [],
+   "curved": false
+  },
+  {
+   "id": "w10",
+   "from": {
+    "type": "pin",
+    "part": "lcd1",
+    "pin": "E"
+   },
+   "to": {
+    "type": "pin",
+    "part": "dev1",
+    "pin": "P2.1"
+   },
+   "color": "#f5c400",
+   "points": [],
+   "curved": false
+  },
+  {
+   "id": "w11",
+   "from": {
+    "type": "pin",
+    "part": "lcd1",
+    "pin": "D4"
+   },
+   "to": {
+    "type": "pin",
+    "part": "dev1",
+    "pin": "P2.2"
+   },
+   "color": "#f5c400",
+   "points": [],
+   "curved": false
+  },
+  {
+   "id": "w12",
+   "from": {
+    "type": "pin",
+    "part": "lcd1",
+    "pin": "D5"
+   },
+   "to": {
+    "type": "pin",
+    "part": "dev1",
+    "pin": "P2.3"
+   },
+   "color": "#f5c400",
+   "points": [],
+   "curved": false
+  },
+  {
+   "id": "w13",
+   "from": {
+    "type": "pin",
+    "part": "lcd1",
+    "pin": "D6"
+   },
+   "to": {
+    "type": "pin",
+    "part": "dev1",
+    "pin": "P2.4"
+   },
+   "color": "#f5c400",
+   "points": [],
+   "curved": false
+  },
+  {
+   "id": "w14",
+   "from": {
+    "type": "pin",
+    "part": "lcd1",
+    "pin": "D7"
+   },
+   "to": {
+    "type": "pin",
+    "part": "dev1",
+    "pin": "P2.5"
+   },
+   "color": "#f5c400",
+   "points": [],
+   "curved": false
+  }
+ ]
+}

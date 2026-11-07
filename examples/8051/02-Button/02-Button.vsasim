@@ -1,0 +1,145 @@
+{
+ "format": 2,
+ "breadboard": "half",
+ "parts": [
+  {
+   "id": "dev1",
+   "kind": "dev-8051",
+   "x": -270.0,
+   "y": 70,
+   "rotation": 0,
+   "flipH": false,
+   "flipV": false,
+   "props": {
+    "chip": "at89s52",
+    "mhz": "11.0592",
+    "program": ":03000000020006F5\n:03005F0002000399\n:0300030002006296\n:0D006200D297209704C29080F9D29080F5CB\n:06003500E478FFF6D8FD9F\n:100013007900E94400601B7A00900073780175A0B1\n:1000230000E493F2A308B8000205A0D9F4DAF2754C\n:02003300A0FF2C\n:10003B007800E84400600A790175A000E4F309D860\n:10004B00FC7800E84400600C7900900001E4F0A318\n:04005B00D8FCD9FAFA\n:0D00060075810712006FE5826003020003A0\n:04006F007582002274\n:00000001FF\n",
+    "programName": "02-Button.hex"
+   }
+  },
+  {
+   "id": "r1",
+   "kind": "resistor",
+   "x": 74.0,
+   "y": 139.0,
+   "rotation": 0,
+   "flipH": false,
+   "flipV": false,
+   "props": {
+    "ohms": "220"
+   }
+  },
+  {
+   "id": "led1",
+   "kind": "led",
+   "x": 109.0,
+   "y": 84.0,
+   "rotation": 0,
+   "flipH": false,
+   "flipV": false,
+   "props": {
+    "color": "red"
+   }
+  },
+  {
+   "id": "btn1",
+   "kind": "push-button",
+   "x": 164.0,
+   "y": 84.0,
+   "rotation": 0,
+   "flipH": false,
+   "flipV": false,
+   "props": {}
+  }
+ ],
+ "wires": [
+  {
+   "id": "w1",
+   "from": {
+    "type": "pin",
+    "part": "dev1",
+    "pin": "GND.2"
+   },
+   "to": {
+    "type": "hole",
+    "hole": "bn1"
+   },
+   "color": "#262626",
+   "points": [],
+   "curved": false
+  },
+  {
+   "id": "w2",
+   "from": {
+    "type": "pin",
+    "part": "dev1",
+    "pin": "5V"
+   },
+   "to": {
+    "type": "hole",
+    "hole": "bp1"
+   },
+   "color": "#d62f2f",
+   "points": [],
+   "curved": false
+  },
+  {
+   "id": "w3",
+   "from": {
+    "type": "hole",
+    "hole": "bp5"
+   },
+   "to": {
+    "type": "hole",
+    "hole": "j6"
+   },
+   "color": "#d62f2f",
+   "points": [],
+   "curved": false
+  },
+  {
+   "id": "w4",
+   "from": {
+    "type": "pin",
+    "part": "dev1",
+    "pin": "P1.0"
+   },
+   "to": {
+    "type": "hole",
+    "hole": "j11"
+   },
+   "color": "#f5c400",
+   "points": [],
+   "curved": false
+  },
+  {
+   "id": "w5",
+   "from": {
+    "type": "pin",
+    "part": "dev1",
+    "pin": "P1.7"
+   },
+   "to": {
+    "type": "hole",
+    "hole": "a16"
+   },
+   "color": "#f07c16",
+   "points": [],
+   "curved": false
+  },
+  {
+   "id": "w6",
+   "from": {
+    "type": "hole",
+    "hole": "j18"
+   },
+   "to": {
+    "type": "hole",
+    "hole": "bn15"
+   },
+   "color": "#262626",
+   "points": [],
+   "curved": false
+  }
+ ]
+}
