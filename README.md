@@ -4,6 +4,8 @@
 
 <h1 align="center">VSA Simulator</h1>
 
+<p align="center"><a href="https://apps.microsoft.com/detail/9nqbwwfwwhn1"><img src="https://get.microsoft.com/images/en-us%20dark.svg" width="200" alt="Get VSA Simulator from Microsoft"/></a></p>
+
 <p align="center">
   <b>Build circuits on a breadboard and run your own Arduino and MicroPython programs on them, completely offline.</b><br/>
   A free circuit and microcontroller simulator for Windows, made for school and college students, researchers and hobbyists.
